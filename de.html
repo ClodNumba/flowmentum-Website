@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>FLOWmentum™ — Löse den einen Block, der dich zurückhält</title>
+<meta name="description" content="Trauer. Schuld. Scham. Vorwurf. Angst. Was dich aufhält, ist nicht Zeit oder Talent – es ist eine alte Wunde. Löse sie an einem Nachmittag, mit Claudia Masüger." />
+<meta property="og:title" content="FLOWmentum™ — Löse den einen Block, der dich zurückhält" />
+<meta property="og:description" content="Was dich aufhält, ist nicht Zeit oder Talent. Es ist eine alte Wunde. Lass sie uns lösen – an einem Nachmittag." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="assets/logo-butterfly.png" />
+
+<!-- Language versions -->
+<link rel="canonical" href="https://flowmentum.world/de" />
+<link rel="alternate" hreflang="en" href="https://flowmentum.world/" />
+<link rel="alternate" hreflang="de" href="https://flowmentum.world/de" />
+<link rel="alternate" hreflang="x-default" href="https://flowmentum.world/" />
+<script>
+  /* Remember the visitor's language choice. */
+  (function(){ try{ localStorage.setItem('flowmentum_lang','de'); }catch(e){} })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     FLOWmentum™ — v4  ·  matched to claudiamasueger.com
+     Navy ↔ pale-blue alternating · serif headlines · gold accents
+     navy #123558 · pale #e8edf4 · gold #C9A24B · cream #f6f1e7
+     butterfly accents in blue / teal / sky (single, in colour)
+     ============================================================ */
+  :root {
+    --navy:#123558; --navy-2:#0e2a47; --navy-deep:#0b2540;
+    --pale:#e8edf4; --cream:#f6f1e7;
+    --gold:#C9A24B; --gold-2:#b8923f;
+    --blue:#3B82C4; --teal:#3AA6A0; --sky:#7DB4E0;
+    --ink:#16293d; --ink-soft:#54657a;
+    --on-navy:#f4efe5; --on-navy-soft:rgba(244,239,229,.80);
+    --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --maxw:1160px; --nav-h:76px;
+    --shadow:0 28px 60px -34px rgba(11,37,64,.45);
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body { margin:0; font-family:var(--sans); color:var(--ink); line-height:1.65; font-weight:400;
+         background:var(--navy); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden; }
+  img { max-width:100%; display:block; }
+  a { color:inherit; }
+
+  .section { position:relative; overflow:hidden; padding:clamp(4.5rem,11vw,8rem) clamp(1.4rem,5vw,3rem); }
+  .wrap { position:relative; z-index:2; max-width:var(--maxw); margin:0 auto; width:100%; }
+  .narrow { max-width:740px; margin-inline:auto; }
+  .center { text-align:center; } .center .body{ margin-inline:auto; }
+  [id]{ scroll-margin-top:calc(var(--nav-h) + 18px); }
+
+  /* themes */
+  .navy  { background:var(--navy); color:var(--on-navy); }
+  .navy-d{ background:var(--navy-deep); color:var(--on-navy); }
+  .pale  { background:var(--pale); color:var(--ink); }
+  .cream { background:var(--cream); color:var(--ink); }
+
+  /* type */
+  h1,h2,h3 { font-family:var(--serif); font-weight:500; margin:0; letter-spacing:.2px; line-height:1.06; }
+  .eyebrow { font-family:var(--sans); font-weight:600; font-size:.76rem; letter-spacing:.22em; text-transform:uppercase; margin:0 0 1.3rem; color:var(--gold); }
+  .pale .eyebrow, .cream .eyebrow { color:var(--gold-2); }
+  .display { font-size:clamp(2.4rem,6vw,4.6rem); line-height:1.04; letter-spacing:-.5px; }
+  h2.title { font-size:clamp(2.2rem,5.4vw,3.8rem); max-width:20ch; }
+  .center h2.title{ margin-inline:auto; }
+  .lead { font-family:var(--serif); font-weight:400; font-size:clamp(1.25rem,2.5vw,1.85rem); line-height:1.34; }
+  .lead.i { font-style:italic; }
+  .body { font-family:var(--sans); font-size:clamp(1rem,1.35vw,1.1rem); color:var(--ink-soft); max-width:48ch; }
+  .navy .body, .navy-d .body { color:var(--on-navy-soft); }
+  .gold { color:var(--gold); }
+  .stack>*+*{ margin-top:1.35rem; } .stack-lg>*+*{ margin-top:2.1rem; }
+
+  /* buttons */
+  .btn { display:inline-flex; align-items:center; gap:.5rem; font-family:var(--sans); font-weight:600; font-size:.95rem;
+         letter-spacing:.02em; line-height:1; padding:1.05rem 1.9rem; border-radius:999px; border:1.5px solid transparent;
+         cursor:pointer; text-decoration:none; transition:transform .22s, background-color .25s, color .25s, border-color .25s; }
+  .btn-gold { background:var(--gold); color:var(--navy-deep); }
+  .btn-gold:hover { background:var(--gold-2); transform:translateY(-2px); }
+  .btn-outline { background:transparent; color:var(--on-navy); border-color:rgba(244,239,229,.45); }
+  .btn-outline:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
+  .pale .btn-outline, .cream .btn-outline { color:var(--navy); border-color:rgba(18,53,88,.3); }
+  .pale .btn-outline:hover, .cream .btn-outline:hover { border-color:var(--gold-2); color:var(--gold-2); }
+  .btn-line { background:transparent; color:inherit; padding:1.05rem .2rem; border:none; opacity:.85; font-weight:500; }
+  .btn-line:hover { opacity:1; gap:.8rem; color:var(--gold); }
+  .btn-row { display:flex; flex-wrap:wrap; align-items:center; gap:1rem 1.7rem; }
+  .center .btn-row{ justify-content:center; }
+
+  /* butterflies (single, in colour) */
+  .bfly { position:absolute; width:42px; color:var(--blue); opacity:.16; pointer-events:none; z-index:1;
+          transform:rotate(var(--r,0deg)); animation:drift var(--dur,9s) ease-in-out infinite; }
+  .bfly use { fill:currentColor; }
+  .b-blue{ color:var(--blue);} .b-teal{ color:var(--teal);} .b-sky{ color:var(--sky);} .b-gold{ color:var(--gold);} .b-white{ color:#fff;}
+  .b-soft{ opacity:.13;} .b-mid{ opacity:.26;}
+  @keyframes drift { 0%,100%{ transform:translateY(0) rotate(var(--r,0deg)); } 50%{ transform:translateY(-15px) rotate(calc(var(--r,0deg)+5deg)); } }
+
+  /* butterfly divider (real brand graphic) */
+  .bdiv { display:flex; align-items:center; justify-content:center; gap:1.2rem; padding:clamp(2.5rem,7vw,4rem) 1rem; }
+  .bdiv .ln { height:1px; width:min(120px,18vw); background:linear-gradient(90deg,transparent,rgba(201,162,75,.45),transparent); }
+  .dbf-img { width:50px; height:auto; flex:none; }
+
+  /* language switch */
+  .nav-right { display:flex; align-items:center; gap:.7rem; }
+  .lang-switch { display:inline-flex; align-items:center; border:1px solid rgba(244,239,229,.28); border-radius:999px; overflow:hidden; }
+  .lang-switch a { font-family:var(--sans); font-size:.78rem; font-weight:600; letter-spacing:.04em; padding:.34rem .62rem;
+                   text-decoration:none; color:var(--on-navy-soft); line-height:1; transition:background-color .2s, color .2s; }
+  .lang-switch a.active { background:var(--gold); color:var(--navy-deep); }
+  .lang-switch a:not(.active):hover { color:var(--gold); }
+
+  /* nav */
+  .nav { position:sticky; top:0; z-index:50; height:var(--nav-h); display:flex; align-items:center;
+         padding:0 clamp(1.4rem,5vw,3rem); background:rgba(11,37,64,.92);
+         backdrop-filter:saturate(140%) blur(12px); -webkit-backdrop-filter:saturate(140%) blur(12px);
+         border-bottom:1px solid rgba(255,255,255,.08); color:var(--on-navy); }
+  .nav .wrap { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .nav-logo { display:inline-flex; align-items:center; }
+  .nav-logo img { width:auto; }
+  .nav-logo .logo-word { height:24px; } .nav-logo .logo-mark { display:none; height:34px; }
+  .nav-links { display:flex; gap:1.6rem; font-size:.95rem; color:var(--on-navy-soft); }
+  .nav-links a { text-decoration:none; transition:color .25s; } .nav-links a:hover{ color:var(--gold); }
+  .nav-dot { color:var(--gold); }
+
+  /* portrait cut-out over navy (hero / cta) — bottom-anchored & grounded so it never "floats" */
+  .figure { position:relative; justify-self:center; align-self:end; display:flex; justify-content:center; width:100%; }
+  .figure::before { content:""; position:absolute; inset:8% -8% 0 -8%;
+    background:radial-gradient(60% 62% at 50% 74%, rgba(125,180,224,.20), rgba(125,180,224,0) 70%); z-index:0; }
+  .figure::after { content:""; position:absolute; left:50%; bottom:2%; transform:translateX(-50%);
+    width:74%; height:30px; background:radial-gradient(ellipse at center, rgba(4,15,28,.55), rgba(4,15,28,0) 72%); filter:blur(7px); z-index:0; }
+  .figure img { position:relative; z-index:1; max-height:82vh; width:auto; margin:0 auto; display:block; }
+
+  /* photo in a soft matted rounded frame (about) — like the framed podcast shot */
+  .photo-panel { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 32px 60px -30px rgba(0,0,0,.55);
+    background:#ece5d6; aspect-ratio:1/1; width:100%; max-width:460px; justify-self:center; }
+  .photo-panel img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; }
+
+  /* hero */
+  .hero { padding-top:clamp(1.8rem,4vw,2.8rem); padding-bottom:0; }
+  .hero-grid { display:grid; grid-template-columns:1fr; gap:clamp(1.6rem,4vw,2.6rem); align-items:end; width:100%; }
+  .hero-copy { align-self:center; padding-bottom:clamp(2rem,5vw,3.5rem); }
+  .hero-copy.stack>*+* { margin-top:.95rem; }
+  .hero .brand-bfly { width:clamp(180px,19vw,320px); height:auto; margin-bottom:.6rem; filter:drop-shadow(0 12px 30px rgba(0,0,0,.28)); }
+  .hero h1 { margin:0; }
+  .hero .clarity { font-family:var(--sans); font-weight:500; font-size:clamp(1.2rem,2.4vw,1.65rem); line-height:1.35; color:var(--on-navy); max-width:32ch; }
+  .hero .subhead-sec, .hero .line-sec { font-family:var(--sans); font-size:clamp(.92rem,1.25vw,1.02rem); line-height:1.5; color:var(--on-navy-soft); max-width:46ch; }
+  @media (min-width:900px){ .hero-grid{ grid-template-columns:1.05fr .95fr; } .hero-copy{ padding-right:1rem; } }
+
+  /* two-column lists */
+  .cols { display:grid; grid-template-columns:1fr; gap:clamp(1.6rem,4vw,3rem); }
+  @media (min-width:760px){ .cols{ grid-template-columns:1fr 1fr; } }
+  .col-head { font-family:var(--sans); font-size:.82rem; font-weight:600; letter-spacing:.15em; text-transform:uppercase; margin:0 0 1.4rem; color:var(--gold); }
+  .pale .col-head, .cream .col-head{ color:var(--gold-2); }
+  .list { list-style:none; margin:0; padding:0; }
+  .list li { font-family:var(--serif); font-size:clamp(.98rem,1.5vw,1.12rem); line-height:1.3; padding:.5rem 0;
+             border-top:1px solid rgba(18,53,88,.12); display:flex; gap:.55rem; align-items:baseline; }
+  @media (min-width:760px){ .list li{ white-space:nowrap; } }
+  .navy .list li, .navy-d .list li { border-color:rgba(255,255,255,.14); }
+  .list li:first-child{ border-top:none; }
+  .list li::before { content:"\2605"; flex:none; color:var(--gold); font-size:.7em; line-height:1.7; }
+
+  /* reframe / session */
+  .reframe .big { font-family:var(--serif); font-size:clamp(2.4rem,6vw,4.2rem); font-weight:500; line-height:1.08; max-width:18ch; margin-inline:auto; }
+  .session .price-name { font-family:var(--serif); font-size:clamp(2.3rem,5.4vw,3.9rem); font-weight:500; line-height:1.06; }
+  .session .lead{ max-width:34ch; margin-inline:auto; }
+  .session .stack-lg>*+*{ margin-top:1.05rem; }
+  section.session{ padding-top:clamp(3.4rem,7vw,5.2rem); padding-bottom:clamp(3.4rem,7vw,5.2rem); }
+
+  /* statistic band */
+  .stat-band{ background:var(--navy-deep); border-top:1px solid rgba(201,162,75,.28); border-bottom:1px solid rgba(201,162,75,.28); }
+  .stat-band .stat-num{ display:block; font-family:var(--serif); font-weight:600; font-size:clamp(4rem,13vw,7.5rem); line-height:.95; color:var(--gold); margin:0 0 .4rem; }
+  .stat-band .stat-line{ font-family:var(--serif); font-weight:500; color:var(--on-navy); font-size:clamp(1.5rem,3.4vw,2.5rem); line-height:1.25; max-width:24ch; margin:0 auto; }
+  .stat-band .stat-source{ font-family:var(--sans); font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--on-navy-soft); margin:1.5rem auto 0; }
+  .stat-band .stat-note{ font-family:var(--serif); font-weight:500; font-size:clamp(1.4rem,3vw,2.1rem); line-height:1.3; color:var(--gold); margin:1.4rem auto 0; max-width:30ch; }
+
+  /* pricing */
+  .stack-card { max-width:720px; margin-inline:auto; background:#fff; border:1px solid #dfe5ee; border-radius:22px; box-shadow:var(--shadow); padding:clamp(1.8rem,4vw,2.8rem); }
+  .price-line { display:flex; align-items:baseline; justify-content:space-between; gap:1.2rem; padding:.85rem 0; border-bottom:1px solid rgba(18,53,88,.10); }
+  .price-line .pname { font-family:var(--serif); font-size:clamp(1.02rem,2vw,1.22rem); line-height:1.3; }
+  .price-line .psub { display:block; font-family:var(--sans); font-size:.82rem; color:var(--ink-soft); margin-top:.15rem; line-height:1.3; }
+  .price-line .ptag { font-family:var(--sans); font-weight:600; font-size:.66em; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-2); margin-left:.2rem; white-space:nowrap; }
+  .price-line .pval { font-family:var(--sans); font-weight:500; font-size:1.02rem; white-space:nowrap; color:var(--ink-soft); }
+  .price-line .pval.free { color:var(--gold-2); font-style:italic; }
+  .price-total { display:flex; justify-content:space-between; align-items:baseline; gap:1.2rem; padding:1.3rem 0 .2rem; font-family:var(--serif); font-size:clamp(1.3rem,3vw,1.9rem); }
+  .price-total .pval{ font-family:var(--sans); font-weight:600; }
+  .founding { text-align:center; margin-top:2.4rem; }
+  .founding .fp { font-family:var(--serif); font-size:clamp(3rem,9vw,5.8rem); line-height:1; color:var(--navy); }
+  .founding .fp .gold{ color:var(--gold-2); }
+  .founding .only { font-family:var(--sans); font-weight:600; letter-spacing:.13em; text-transform:uppercase; font-size:.82rem; color:var(--gold-2); margin-top:.9rem; }
+  .founding .btn{ margin-top:2rem; }
+  .gift{ display:inline-block; margin-right:.4rem; }
+
+  /* about */
+  .about-grid { display:grid; grid-template-columns:1fr; gap:clamp(2.4rem,5vw,4rem); align-items:center; }
+  @media (min-width:880px){ .about-grid{ grid-template-columns:.95fr 1.05fr; } }
+  .about .lead.first { font-size:clamp(1.7rem,3.4vw,2.5rem); line-height:1.18; max-width:none; }
+
+  /* testimonials */
+  .cards { display:grid; grid-template-columns:1fr; gap:1.4rem; }
+  @media (min-width:760px){ .cards{ grid-template-columns:repeat(3,1fr); } }
+  .card { background:#fff; border:1px solid #dfe5ee; border-radius:18px; padding:2rem 1.8rem; box-shadow:var(--shadow); display:flex; flex-direction:column; }
+  .stars { color:var(--gold); letter-spacing:.14em; margin-bottom:1.1rem; }
+  .quote { font-family:var(--serif); font-size:1.3rem; line-height:1.4; margin:0 0 1.4rem; flex:1; }
+  .cite { font-size:.9rem; color:var(--ink-soft); font-weight:400; line-height:1.5; }
+  .cite .cname { display:block; font-family:var(--serif); font-size:1.2rem; font-weight:600; color:var(--ink); line-height:1.2; margin-bottom:.2rem; }
+  .cite .crole { display:block; color:var(--ink-soft); }
+  .cite .cloc { white-space:nowrap; }
+
+  /* faq */
+  .faq { max-width:740px; margin-inline:auto; }
+  .faq details { border-bottom:1px solid rgba(18,53,88,.12); }
+  .faq summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:1rem;
+                 padding:1.3rem 0; font-family:var(--serif); font-size:clamp(1.3rem,3vw,1.8rem); line-height:1.25; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary .pm { flex:none; width:24px; height:24px; position:relative; color:var(--gold-2); transition:transform .35s; }
+  .faq summary .pm::before,.faq summary .pm::after{ content:""; position:absolute; background:currentColor; border-radius:2px; top:50%; left:50%; transform:translate(-50%,-50%); }
+  .faq summary .pm::before{ width:15px; height:2px; } .faq summary .pm::after{ width:2px; height:15px; transition:opacity .3s,transform .35s; }
+  .faq details[open] summary .pm::after{ opacity:0; transform:translate(-50%,-50%) rotate(90deg); }
+  .faq details[open] summary .pm{ transform:rotate(180deg); }
+  .faq .answer{ color:var(--ink-soft); font-size:1.08rem; padding:0 0 1.4rem; max-width:54ch; }
+
+  /* final cta — calm centered closing */
+  .final { padding-top:clamp(5rem,11vw,8.5rem); padding-bottom:clamp(5rem,11vw,8.5rem); text-align:center; }
+  .final-col { max-width:660px; margin-inline:auto; display:flex; flex-direction:column; align-items:center; }
+  .final h2 { font-size:clamp(1.9rem,4vw,3rem); line-height:1.14; max-width:20ch; margin:0; }
+  .final .signoff-frame { display:flex; align-items:stretch; width:clamp(330px,76vw,560px); aspect-ratio:1.7/1; margin:clamp(1.8rem,3.5vw,2.6rem) auto 0;
+    border-radius:24px; overflow:hidden; background:#ece5d6; box-shadow:0 30px 60px -30px rgba(0,0,0,.55); }
+  .final .frame-photo { flex:0 0 auto; height:100%; aspect-ratio:1/1; position:relative; }
+  .final .frame-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .final .frame-caption { flex:1; display:flex; align-items:center; justify-content:center; padding:0 1rem; text-align:center;
+    font-family:var(--serif); font-style:italic; font-weight:500; font-size:clamp(1.5rem,3.6vw,2.3rem); color:var(--navy); line-height:1.18; }
+  .final .final-btn { margin-top:2rem; }
+  .final .msg-direct { margin:2.2rem 0 0; color:var(--on-navy); }
+  .final .contact-row { display:flex; flex-wrap:wrap; gap:1rem 2rem; justify-content:center; margin-top:.9rem; font-size:1rem; }
+  .final .contact-row a { display:inline-flex; align-items:center; gap:.5rem; text-decoration:none; color:var(--on-navy-soft); transition:color .25s; }
+  .final .contact-row a:hover{ color:var(--gold); }
+  .final .sessions-line { opacity:.7; font-size:.95rem; margin-top:1.6rem; }
+  @media (max-width:600px){ .final .final-btn{ width:100%; justify-content:center; } }
+
+  /* footer */
+  .footer { background:var(--navy-deep); color:var(--on-navy-soft); padding:clamp(3rem,7vw,4.2rem) clamp(1.4rem,5vw,3rem); text-align:center; position:relative; overflow:hidden; }
+  .footer img.flogo { height:clamp(180px,30vw,250px); width:auto; max-width:100%; margin:0 auto .4rem; display:block;
+    -webkit-mask:radial-gradient(closest-side, #000 74%, transparent 100%); mask:radial-gradient(closest-side, #000 74%, transparent 100%); }
+  .footer .links { display:flex; flex-wrap:wrap; gap:.6rem 1.6rem; justify-content:center; margin-bottom:1.2rem; font-size:.95rem; }
+  .footer .links a{ text-decoration:none; transition:color .25s; } .footer .links a:hover{ color:var(--gold); }
+  .footer .fineline{ font-size:.9rem; opacity:.7; } .footer .fineline .dot{ color:var(--gold); }
+
+  /* reveal */
+  .reveal { opacity:0; transform:translateY(30px); transition:opacity 1s cubic-bezier(.16,.6,.2,1), transform 1s cubic-bezier(.16,.6,.2,1); }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal.d1{ transition-delay:.12s;} .reveal.d2{ transition-delay:.24s;} .reveal.d3{ transition-delay:.36s;}
+
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } .reveal{ opacity:1; transform:none; transition:none; } .bfly{ animation:none; } .btn{ transition:none; } }
+  @media (max-width:720px){
+    .nav-links{ display:none; }
+    .nav-logo .logo-word{ display:block; height:15px; }
+    .nav-logo .logo-mark{ display:none; }
+    .nav{ padding:0 1rem; }
+    .nav .btn-gold{ padding:.5rem .9rem !important; font-size:.78rem; }
+    .nav-right{ gap:.5rem; }
+    .lang-switch a{ padding:.3rem .5rem; font-size:.72rem; }
+  }
+  /* German copy runs longer than English — let the two-column lists wrap instead of overflowing. */
+  @media (min-width:760px){ .list li{ white-space:normal; } }
+</style>
+</head>
+<body>
+
+<!-- Reusable butterfly mark (brand shape) — coloured via CSS `color`. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bfly" viewBox="0 0 120 120">
+    <circle cx="60" cy="22" r="8" fill="currentColor"/>
+    <ellipse cx="40" cy="52" rx="26" ry="10" transform="rotate(-32 40 52)" fill="currentColor"/>
+    <ellipse cx="80" cy="52" rx="26" ry="10" transform="rotate(32 80 52)" fill="currentColor"/>
+    <ellipse cx="44" cy="84" rx="20" ry="7" transform="rotate(34 44 84)" fill="currentColor"/>
+    <ellipse cx="76" cy="84" rx="20" ry="7" transform="rotate(-34 76 84)" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<!-- ============================== NAV ============================== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="nav-logo" href="#top" aria-label="FLOWmentum Startseite">
+      <img class="logo-word" src="assets/logo-nav.png" alt="FLOWmentum™" />
+      <img class="logo-mark" src="assets/logo-butterfly.png" alt="FLOWmentum™" />
+    </a>
+    <nav class="nav-links" aria-label="Navigation">
+      <a href="#problem">Der Block</a><span class="nav-dot">·</span>
+      <a href="#session">Die Session</a><span class="nav-dot">·</span>
+      <a href="#about">Die Geschichte</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language / Sprache">
+        <a href="/" hreflang="en" onclick="try{localStorage.setItem('flowmentum_lang','en')}catch(e){}">EN</a>
+        <a href="/de" class="active" aria-current="true" hreflang="de" onclick="try{localStorage.setItem('flowmentum_lang','de')}catch(e){}">DE</a>
+      </div>
+      <a class="btn btn-gold" href="#charge-finder" style="padding:.8rem 1.4rem;">Finde deinen Block</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== HERO (navy) ============================== -->
+<section class="section navy hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy stack reveal">
+      <img class="brand-bfly" src="assets/logo-butterfly.png" alt="" />
+      <h1 class="display">Trauer, Schuld,<br/>Wut, <span class="gold">Angst…</span></h1>
+      <p class="clarity">Löse einen emotionalen Block an einem Nachmittag. <span class="gold">Beginne dein nächstes Kapitel.</span></p>
+      <p class="subhead-sec">Was dich aufhält, ist nicht Zeit oder Talent. Es ist eine alte Wunde.</p>
+      <p class="line-sec">Lass uns den emotionalen Block lösen, der dich davon abhält, deinen Traum zu leben – an einem einzigen Nachmittag.</p>
+      <div class="btn-row" style="margin-top:.6rem;">
+        <a class="btn btn-gold" href="#charge-finder">Finde deinen Block →</a>
+        <a class="btn btn-line" href="https://www.claudiamasueger.com/apply-now">Oder bewirb dich für ein persönliches Gespräch →</a>
+      </div>
+    </div>
+    <figure class="figure reveal d1" style="margin:0;">
+      <img src="assets/portrait-cta.png" alt="Claudia Masüger, mit offenen Armen" />
+    </figure>
+  </div>
+</section>
+
+<!-- ==================================================================== -->
+<!-- CHARGE FINDER — interactive quiz. Styled with the page's own tokens    -->
+<!-- (--navy / --gold / --serif / --sans / .btn .btn-gold / .reveal).       -->
+<!-- All primary buttons across the page link to #charge-finder.            -->
+<!-- ==================================================================== -->
+<style>
+  /* ----- The Charge Finder (embedded, scoped to #charge-finder) ----- */
+  #charge-finder .cf-card{ max-width:680px; margin-inline:auto; background:#fff; border:1px solid #dfe5ee;
+    border-radius:22px; box-shadow:var(--shadow); padding:clamp(2rem,5vw,3.4rem); }
+  #charge-finder .cf-screen{ animation:cf-fade .5s ease; }
+  @keyframes cf-fade{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:none;} }
+
+  #charge-finder .cf-eyebrow{ font-family:var(--sans); font-weight:600; font-size:.76rem; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--gold-2); margin:0 0 1.1rem; }
+  #charge-finder .cf-h1{ font-family:var(--serif); font-weight:500; font-size:clamp(2.2rem,5vw,3.4rem);
+    line-height:1.06; color:var(--ink); margin:0 0 1.2rem; }
+  #charge-finder .cf-lead{ font-family:var(--sans); font-size:clamp(1rem,1.4vw,1.12rem); color:var(--ink-soft);
+    line-height:1.62; margin:0 0 2rem; max-width:52ch; }
+
+  #charge-finder .btn.cf-block{ width:100%; justify-content:center; }
+
+  #charge-finder .cf-field{ margin-bottom:1rem; }
+  #charge-finder .cf-field label{ display:block; font-family:var(--sans); font-size:.8rem; font-weight:600;
+    letter-spacing:.04em; color:var(--ink-soft); margin-bottom:.45rem; }
+  #charge-finder .cf-input{ width:100%; border:1.5px solid #d7dfea; border-radius:14px; padding:.95rem 1rem;
+    font-size:1rem; font-family:var(--sans); color:var(--ink); background:#fff; outline:none; transition:border-color .2s; }
+  #charge-finder .cf-input:focus{ border-color:var(--gold); }
+  #charge-finder .cf-input.cf-bad{ border-color:#c9776b; }
+  #charge-finder .cf-note{ font-family:var(--serif); font-style:italic; font-size:1.1rem; color:var(--ink-soft);
+    margin:.6rem 0 1.8rem; }
+  #charge-finder .cf-err{ color:#b5604f; font-size:.85rem; margin:-.3rem 0 1rem; min-height:1rem; }
+
+  #charge-finder .cf-step{ font-family:var(--sans); font-size:.76rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--ink-soft); margin-bottom:.8rem; }
+  #charge-finder .cf-progress{ height:5px; border-radius:5px; background:#e4e9f1; overflow:hidden; margin-bottom:2.4rem; }
+  #charge-finder .cf-progress>div{ height:100%; background:var(--gold); border-radius:5px; transition:width .45s ease; }
+
+  #charge-finder .cf-statement{ font-family:var(--serif); font-weight:500; font-size:clamp(1.7rem,3.6vw,2.5rem);
+    line-height:1.24; color:var(--ink); margin:0 0 2.2rem; min-height:2.6em; }
+
+  #charge-finder .cf-scale{ display:flex; gap:.6rem; margin-bottom:1rem; }
+  #charge-finder .cf-dot{ flex:1; aspect-ratio:1/1; border:1.5px solid #d7dfea; background:#fff; border-radius:14px;
+    font-family:var(--serif); font-size:1.5rem; color:var(--navy); cursor:pointer; transition:all .15s ease; }
+  #charge-finder .cf-dot:hover{ border-color:var(--gold); }
+  #charge-finder .cf-dot.sel{ border-color:var(--gold); background:rgba(201,162,75,.14); font-weight:600; color:var(--gold-2); }
+  #charge-finder .cf-scale-ends{ display:flex; justify-content:space-between; font-family:var(--sans);
+    font-size:.8rem; color:var(--ink-soft); letter-spacing:.02em; }
+  #charge-finder .cf-back{ text-align:center; margin-top:1.8rem; }
+  #charge-finder .cf-textlink{ background:none; border:none; font-family:var(--sans); font-size:.9rem;
+    color:var(--ink-soft); cursor:pointer; text-decoration:underline; text-underline-offset:3px; padding:.5rem; }
+  #charge-finder .cf-textlink:hover{ color:var(--gold-2); }
+
+  #charge-finder .cf-result-name{ font-family:var(--serif); font-weight:500; font-size:clamp(2.6rem,6vw,4rem);
+    line-height:1.04; color:var(--ink); margin:0 0 1.4rem; }
+  #charge-finder .cf-result-body{ font-family:var(--sans); font-size:clamp(1.02rem,1.5vw,1.15rem); color:var(--ink-soft);
+    line-height:1.7; margin:0 0 2rem; }
+  #charge-finder .cf-refund{ text-align:center; font-family:var(--sans); font-size:.85rem; color:var(--ink-soft);
+    margin:1rem 0 .2rem; letter-spacing:.01em; }
+  #charge-finder .cf-retake-row{ text-align:center; margin-top:.8rem; }
+
+  #charge-finder .cf-admin{ text-align:center; margin-top:1.2rem; }
+  #charge-finder .cf-admin button{ background:transparent; border:1px solid rgba(18,53,88,.3); border-radius:12px;
+    padding:.6rem 1rem; font-size:.8rem; color:var(--ink-soft); cursor:pointer; }
+
+  /* ----- Charge Finder popup (opens on "Find your block") ----- */
+  .cf-modal{ position:fixed; inset:0; z-index:200; display:none; overflow-y:auto; }
+  .cf-modal.open{ display:block; }
+  .cf-modal-backdrop{ position:fixed; inset:0; background:rgba(8,24,42,.66); -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px); }
+  .cf-modal-dialog{ position:relative; z-index:1; width:min(720px,92vw); margin:4.5vh auto 4vh; }
+  .cf-modal-close{ position:fixed; top:1.1rem; right:1.3rem; z-index:3; width:44px; height:44px; border-radius:50%;
+    border:none; background:#fff; color:var(--navy); font-family:var(--sans); font-size:1.7rem; line-height:1; cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,.3); }
+  body.cf-lock{ overflow:hidden; }
+</style>
+
+<!-- The Charge Finder now opens as a popup when any "Find your block" button is clicked. -->
+<div id="cf-modal" class="cf-modal" aria-hidden="true">
+  <div class="cf-modal-backdrop" data-cf-close></div>
+  <button class="cf-modal-close" aria-label="Schliessen" data-cf-close>×</button>
+  <div class="cf-modal-dialog" id="charge-finder" role="dialog" aria-modal="true" aria-label="Der Block-Finder">
+    <div class="cf-card"><div id="cf-root"></div></div>
+  </div>
+</div>
+
+<!-- ===== Apply for a Clarity Call — on-page popup (no jump to main site) ===== -->
+<style>
+  #apply-modal .ap-card{ max-width:560px; margin-inline:auto; background:#fff; border:1px solid #dfe5ee; border-radius:22px; box-shadow:var(--shadow); padding:clamp(2rem,5vw,3.2rem); }
+  #apply-modal .ap-eyebrow{ font-family:var(--sans); font-weight:600; font-size:.76rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-2); margin:0 0 1rem; }
+  #apply-modal .ap-h1{ font-family:var(--serif); font-weight:500; font-size:clamp(2rem,4.5vw,3rem); line-height:1.08; color:var(--ink); margin:0 0 1rem; }
+  #apply-modal .ap-lead{ font-family:var(--sans); font-size:clamp(1rem,1.4vw,1.1rem); color:var(--ink-soft); line-height:1.6; margin:0 0 1.6rem; }
+  #apply-modal .ap-field{ margin-bottom:1rem; }
+  #apply-modal .ap-field label{ display:block; font-family:var(--sans); font-size:.8rem; font-weight:600; color:var(--ink-soft); margin-bottom:.4rem; }
+  #apply-modal .ap-input{ width:100%; box-sizing:border-box; border:1.5px solid #d7dfea; border-radius:14px; padding:.9rem 1rem; font-size:1rem; font-family:var(--sans); color:var(--ink); background:#fff; outline:none; transition:border-color .2s; }
+  #apply-modal .ap-input:focus{ border-color:var(--gold); }
+  #apply-modal textarea.ap-input{ resize:vertical; min-height:96px; }
+  #apply-modal .ap-err{ color:#b5604f; font-size:.85rem; margin:.2rem 0 1rem; min-height:1rem; }
+  #apply-modal .btn.ap-block{ width:100%; justify-content:center; }
+  #apply-modal .ap-thanks{ text-align:center; }
+</style>
+<div id="apply-modal" class="cf-modal" aria-hidden="true">
+  <div class="cf-modal-backdrop" data-apply-close></div>
+  <button class="cf-modal-close" aria-label="Schliessen" data-apply-close>×</button>
+  <div class="cf-modal-dialog" role="dialog" aria-modal="true" aria-label="Für ein persönliches Gespräch bewerben">
+    <div class="ap-card" id="apply-root">
+      <p class="ap-eyebrow">Privat 1:1</p>
+      <h2 class="ap-h1">Bewirb dich für dein Klarheits-Gespräch</h2>
+      <p class="ap-lead">Erzähl mir ein wenig, wo du gerade stehst.</p>
+      <form id="apply-form" novalidate>
+        <div class="ap-field"><label for="ap-name">Vorname</label><input class="ap-input" id="ap-name" type="text" placeholder="Dein Vorname" /></div>
+        <div class="ap-field"><label for="ap-email">E-Mail</label><input class="ap-input" id="ap-email" type="email" placeholder="du@beispiel.com" /></div>
+        <div class="ap-field"><label for="ap-msg">Was beschäftigt dich gerade?</label><textarea class="ap-input" id="ap-msg" placeholder="Ein, zwei Sätze …"></textarea></div>
+        <div class="ap-err" id="ap-err"></div>
+        <button class="btn btn-gold ap-block" type="submit" id="ap-submit">Bewerbung senden →</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var modal=document.getElementById('apply-modal'); if(!modal) return;
+  function openApply(){
+    var cf=document.getElementById('cf-modal'); if(cf){ cf.classList.remove('open'); cf.setAttribute('aria-hidden','true'); }
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('cf-lock');
+  }
+  function closeApply(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('cf-lock'); }
+  document.addEventListener('click', function(e){
+    var t=e.target.closest('a[href="https://www.claudiamasueger.com/apply-now"], [data-apply]');
+    if(t){ e.preventDefault(); openApply(); }
+  });
+  modal.querySelectorAll('[data-apply-close]').forEach(function(b){ b.addEventListener('click', closeApply); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeApply(); });
+  var form=document.getElementById('apply-form'), err=document.getElementById('ap-err'), root=document.getElementById('apply-root');
+  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var name=document.getElementById('ap-name').value.trim();
+    var email=document.getElementById('ap-email').value.trim();
+    var msg=document.getElementById('ap-msg').value.trim();
+    err.textContent='';
+    if(!name){ err.textContent='Bitte gib deinen Vornamen ein.'; return; }
+    if(!validEmail(email)){ err.textContent='Bitte gib eine gültige E-Mail-Adresse ein.'; return; }
+    var btn=document.getElementById('ap-submit'); btn.textContent='Wird gesendet …'; btn.disabled=true;
+    fetch("https://formspree.io/f/xjgqegrd", {
+      method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+      body: JSON.stringify({ name:name, email:email, message:msg, result:(window.__blockResult||""), type:"Clarity Call application (DE)", _subject:"Neue Klarheits-Gespräch Bewerbung: "+name+(window.__blockResult?(" — "+window.__blockResult):"") })
+    }).then(function(res){
+      if (res && res.ok){
+        root.innerHTML='<div class="ap-thanks"><p class="ap-eyebrow">Danke</p><h2 class="ap-h1">Bewerbung erhalten.</h2><p class="ap-lead">Danke. Ich lese jede Bewerbung persönlich und melde mich sehr bald bei dir.</p></div>';
+      } else {
+        btn.textContent='Bewerbung senden →'; btn.disabled=false; err.textContent='Konnte nicht gesendet werden – bitte schreib direkt an claudia@masueger.com.';
+      }
+    }).catch(function(){
+      btn.textContent='Bewerbung senden →'; btn.disabled=false; err.textContent='Etwas ist schiefgelaufen – bitte schreib direkt an claudia@masueger.com.';
+    });
+  });
+})();
+</script>
+
+<script>
+/* =========================================================================
+   THE CHARGE FINDER — vanilla JS, no backend. Lives inside the FLOWmentum
+   landing page; styled with the page's own design tokens.
+   ========================================================================= */
+(function(){
+  /* ---- The 12 statements (order preserved). Each carries one charge tag. ---- */
+  var STATEMENTS = [
+    { t: "Ich trauere noch immer um etwas oder jemanden, das oder den ich verloren habe.", charge: "GRIEF" },
+    { t: "Ein Teil von mir betrauert eine Version meines Lebens, die vorbei ist.",         charge: "GRIEF" },
+    { t: "Ich fühle mich schuldig, wenn ich meine eigenen Wünsche an erste Stelle setze.", charge: "GUILT" },
+    { t: "Ich fühle mich schuldig, mehr zu wollen, wo mein Leben doch schon gut aussieht.", charge: "GUILT" },
+    { t: "Wie viel ich auch erreiche, insgeheim fühle ich mich nicht genug.",              charge: "NOT_ENOUGH" },
+    { t: "Wenn die Menschen mich wirklich kennen würden, würden sie geringer von mir denken.", charge: "NOT_ENOUGH" },
+    { t: "Ich ertappe mich dabei, jemandem – oder dem Leben – die Schuld für meine Lage zu geben.", charge: "BLAME" },
+    { t: "Ich spiele immer wieder durch, wie mir jemand Unrecht getan hat, und es schmerzt noch immer.", charge: "BLAME" },
+    { t: "Wenn Gutes kommt, finde ich einen Weg, mich zurückzuziehen.",                    charge: "FEAR_SUCCESS" },
+    { t: "Sichtbarer oder erfolgreicher zu sein, macht mir leise Angst.",                  charge: "FEAR_SUCCESS" },
+    { t: "Ich fürchte, es ist zu spät für mich, mein nächstes Kapitel zu beginnen.",       charge: "FEAR_FUTURE" },
+    { t: "Ich plane ständig meinen nächsten Schritt, doch die Angst hält mich vom Anfangen ab.", charge: "FEAR_FUTURE" }
+  ];
+
+  /* ---- Tie-break order: earliest in this list wins on a tie. ---- */
+  var CHARGE_ORDER = ["GRIEF", "GUILT", "NOT_ENOUGH", "BLAME", "FEAR_SUCCESS", "FEAR_FUTURE"];
+
+  /* ---- The six results ---- */
+  var RESULTS = {
+    GRIEF: { name: "Trauer &amp; Verlust",
+      body: "Etwas, das du geliebt hast, ist fort – ein Unternehmen, eine Ehe, eine Rolle oder eine Version von dir, die die Jahre genommen haben. Und ein Teil von dir trauert noch immer leise darum. Diese Trauer ist keine Schwäche; sie ist Liebe, die keinen Ort mehr hat. Wenn wir die Ladung lösen, bleibt die Liebe – doch das Gewicht fällt ab, und du kannst dich endlich nach vorne wenden." },
+    GUILT: { name: "Schuld",
+      body: "Irgendwo hast du gelernt, dass mehr zu wollen – dich selbst an erste Stelle zu setzen – egoistisch sei. Also machst du deine eigenen Wünsche klein, damit es allen anderen angenehm bleibt, und nennst das gut sein. Diese Schuld ist die stille Steuer auf dein nächstes Kapitel. Wenn sie sich löst, fühlt es sich nicht mehr wie Verrat an, dich für dich zu entscheiden – sondern wie Erlaubnis." },
+    NOT_ENOUGH: { name: "Nicht-genug-Sein",
+      body: "Von aussen hast du so viel erreicht – und doch beharrt eine leise Stimme darauf, dass es nie ganz genug ist, und dass die Menschen geringer von dir denken würden, wenn sie die wahre dich sähen. Seit Jahren läufst du dieser Stimme davon. Sie war nie die Wahrheit; sie war eine alte Ladung. Wenn sie sich hebt, hörst du auf, deinen Wert zu beweisen, und beginnst, aus ihm zu leben." },
+    BLAME: { name: "Groll &amp; Schuldzuweisung",
+      body: "Ein Teil von dir macht noch immer jemanden – oder das Leben selbst – für deine Lage verantwortlich. Das ist verständlich, und es ist zugleich das Seil, das dich an die Vergangenheit bindet. Solange die Ladung da ist, liegt deine Kraft in fremden Händen. Wenn wir sie lösen, holst du sie dir zurück – nicht, indem du die anderen entschuldigst, sondern indem du dich selbst befreist." },
+    FEAR_SUCCESS: { name: "Angst vor dem eigenen Erfolg",
+      body: "Die seltsame Wahrheit: Nicht das Scheitern macht dir Angst – sondern der Erfolg. Mehr Sichtbarkeit, mehr Erwartung, mehr zu verlieren. Also ziehst du dich genau an der Schwelle zurück, wieder und wieder, und verstehst nicht, warum. Das ist eine Ladung, kein Charakterfehler. Wenn sie sich löst, lösen sich auch die Bremsen – und vorwärts fühlt sich nicht länger gefährlich an." },
+    FEAR_FUTURE: { name: "Angst vor der Zukunft",
+      body: "Eine Stimme flüstert unentwegt, es sei zu spät, das Fenster sei geschlossen, es sei sicherer, gar nicht erst anzufangen. Also planst und recherchierst und wartest du – während das Kapitel, das du leben sollst, ebenfalls wartet. Es war nie zu spät; es war diese Angst. Wenn sie sich hebt, wird aus ‚irgendwann‘ endlich jetzt." }
+  };
+
+  var APPLY_URL = "https://www.claudiamasueger.com/apply-now";
+
+  /* ---------------- State ---------------- */
+  var root = document.getElementById("cf-root");
+  var lead = { firstName: "", email: "" };
+  var answers = new Array(STATEMENTS.length).fill(null); // 1..5
+  var qIndex = 0;
+
+  function el(html){ var d = document.createElement("div"); d.innerHTML = html.trim(); return d.firstElementChild; }
+  function swap(node){ root.innerHTML = ""; root.appendChild(node); }
+
+  /* =======================================================================
+     LEAD STORAGE — downloadable CSV / local JSON (no backend today).
+     Owner: open this page with #submissions on the URL for a Download button,
+     or run  downloadSubmissionsCSV()  in the browser console.
+     ======================================================================= */
+  var STORE_KEY = "charge_finder_leads";
+  function getLeads(){ try { return JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch(e){ return []; } }
+  function saveLead(record){
+    // Best-effort: never let a storage failure block the result screen.
+    try { var all = getLeads(); all.push(record); localStorage.setItem(STORE_KEY, JSON.stringify(all)); }
+    catch(e){ console.warn("Charge Finder: could not save lead locally —", e); }
+  }
+  function downloadSubmissionsCSV(){
+    var rows = getLeads();
+    if (!rows.length){ alert("Auf diesem Gerät sind noch keine Einträge gespeichert."); return; }
+    var cols = ["timestamp","firstName","email","result","GRIEF","GUILT","NOT_ENOUGH","BLAME","FEAR_SUCCESS","FEAR_FUTURE"];
+    var esc = function(v){ return '"' + String(v == null ? "" : v).replace(/"/g,'""') + '"'; };
+    var lines = [cols.join(",")];
+    rows.forEach(function(r){
+      lines.push(cols.map(function(c){
+        if (r.scores && c in r.scores) return esc(r.scores[c]);
+        return esc(r[c]);
+      }).join(","));
+    });
+    var blob = new Blob([lines.join("\r\n")], { type:"text/csv;charset=utf-8;" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = "charge-finder-submissions.csv"; a.click();
+    URL.revokeObjectURL(a.href);
+  }
+  window.downloadSubmissionsCSV = downloadSubmissionsCSV;
+
+  /* =======================================================================
+     EMAIL SERVICE HOOK — connect Mailchimp / ConvertKit here later.
+     -----------------------------------------------------------------------
+     No-op today so nothing blocks. When ready, replace the body with a
+     fetch() to your provider (or to a small serverless endpoint that holds
+     your API key — never put a private key in this client-side file).
+
+     ConvertKit example:
+       await fetch("https://api.convertkit.com/v3/forms/FORM_ID/subscribe", {
+         method:"POST", headers:{ "Content-Type":"application/json" },
+         body: JSON.stringify({ api_key:"PUBLIC_KEY", email:record.email,
+           first_name:record.firstName, fields:{ charge_result:record.result } })
+       });
+     Mailchimp example (via your own /api/subscribe serverless function):
+       await fetch("/api/subscribe", { method:"POST",
+         headers:{ "Content-Type":"application/json" }, body: JSON.stringify(record) });
+     ======================================================================= */
+  function submitToEmailService(record){
+    var resultName = ((RESULTS[record.result] && RESULTS[record.result].name) || record.result).replace(/&amp;/g, "&");
+    return fetch("https://formspree.io/f/xjgqegrd", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        name: record.firstName,
+        email: record.email,
+        result: resultName,
+        _subject: "New Block Finder lead: " + record.firstName + " — " + resultName
+      })
+    }).catch(function (e) { console.warn("Formspree send failed:", e); });
+  }
+
+  /* ---------------- Scoring ---------------- */
+  function computeResult(){
+    var scores = { GRIEF:0, GUILT:0, NOT_ENOUGH:0, BLAME:0, FEAR_SUCCESS:0, FEAR_FUTURE:0 };
+    STATEMENTS.forEach(function(s,i){ scores[s.charge] += (answers[i] || 0); });
+    var winner = CHARGE_ORDER[0];
+    CHARGE_ORDER.forEach(function(c){ if (scores[c] > scores[winner]) winner = c; });
+    return { winner: winner, scores: scores };
+  }
+
+  /* ---------------- Screens ---------------- */
+  function renderIntro(){
+    var screen = el(
+      '<div class="cf-screen">' +
+        '<p class="cf-eyebrow">Der Block-Finder</p>' +
+        '<h2 class="cf-h1">Welcher Block hält dich zurück?</h2>' +
+        '<p class="cf-lead">Fast jede Frau, die sich festgefahren fühlt, trägt eine dominante emotionale Ladung in sich. Du kannst nicht lösen, was du nicht benennen kannst. Nimm dir 2 Minuten, um deine zu finden.</p>' +
+        '<button class="btn btn-gold cf-block" id="cf-begin">Starten →</button>' +
+      '</div>'
+    );
+    screen.querySelector("#cf-begin").onclick = function(){ qIndex = 0; renderQuestion(); };
+    swap(screen);
+  }
+
+  function renderGate(){
+    var screen = el(
+      '<div class="cf-screen">' +
+        '<p class="cf-eyebrow">Bevor wir beginnen</p>' +
+        '<h2 class="cf-h1">Wohin dürfen wir dein Ergebnis senden?</h2>' +
+        '<div class="cf-field"><label for="cf-name">Vorname</label>' +
+          '<input class="cf-input" id="cf-name" type="text" autocomplete="given-name" placeholder="Dein Vorname" /></div>' +
+        '<div class="cf-field"><label for="cf-email">E-Mail</label>' +
+          '<input class="cf-input" id="cf-email" type="email" autocomplete="email" placeholder="du@beispiel.com" /></div>' +
+        '<div class="cf-err" id="cf-err"></div>' +
+        '<p class="cf-note">Dein Ergebnis erscheint hier – und landet in deinem Postfach.</p>' +
+        '<button class="btn btn-gold cf-block" id="cf-go">Weiter →</button>' +
+      '</div>'
+    );
+    var nameI = screen.querySelector("#cf-name");
+    var emailI = screen.querySelector("#cf-email");
+    var err = screen.querySelector("#cf-err");
+    nameI.value = lead.firstName; emailI.value = lead.email;
+    var validEmail = function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); };
+
+    screen.querySelector("#cf-go").onclick = function(){
+      var fn = nameI.value.trim(), em = emailI.value.trim();
+      nameI.classList.remove("cf-bad"); emailI.classList.remove("cf-bad");
+      if (!fn){ err.textContent = "Bitte gib deinen Vornamen ein."; nameI.classList.add("cf-bad"); nameI.focus(); return; }
+      if (!validEmail(em)){ err.textContent = "Bitte gib eine gültige E-Mail-Adresse ein, damit dich dein Ergebnis erreicht."; emailI.classList.add("cf-bad"); emailI.focus(); return; }
+      lead.firstName = fn; lead.email = em; qIndex = 0; renderQuestion();
+    };
+    swap(screen);
+    setTimeout(function(){ nameI.focus(); }, 60);
+  }
+
+  function renderQuestion(){
+    var s = STATEMENTS[qIndex];
+    var total = STATEMENTS.length;
+    var pct = Math.round((qIndex / total) * 100);
+    var current = answers[qIndex];
+    var dots = [1,2,3,4,5].map(function(n){
+      return '<button class="cf-dot ' + (current === n ? "sel" : "") + '" data-v="' + n + '">' + n + '</button>';
+    }).join("");
+
+    var screen = el(
+      '<div class="cf-screen">' +
+        '<div class="cf-step">Aussage ' + (qIndex + 1) + ' von ' + total + '</div>' +
+        '<div class="cf-progress"><div style="width:' + pct + '%"></div></div>' +
+        '<p class="cf-statement">' + s.t + '</p>' +
+        '<div class="cf-scale">' + dots + '</div>' +
+        '<div class="cf-scale-ends"><span>1 · Nicht ich</span><span>Ganz genau ich · 5</span></div>' +
+        '<div class="cf-back">' + (qIndex > 0 ? '<button class="cf-textlink" id="cf-back">‹ Zurück</button>' : '') + '</div>' +
+      '</div>'
+    );
+
+    screen.querySelectorAll(".cf-dot").forEach(function(btn){
+      btn.onclick = function(){
+        answers[qIndex] = Number(btn.dataset.v);
+        screen.querySelectorAll(".cf-dot").forEach(function(b){ b.classList.remove("sel"); });
+        btn.classList.add("sel");
+        setTimeout(function(){
+          if (qIndex < STATEMENTS.length - 1){ qIndex++; renderQuestion(); }
+          else { finish(); }
+        }, 260);
+      };
+    });
+    var back = screen.querySelector("#cf-back");
+    if (back) back.onclick = function(){ qIndex--; renderQuestion(); };
+    swap(screen);
+  }
+
+  function finish(){
+    var r = computeResult();
+    var resultName = ((RESULTS[r.winner] && RESULTS[r.winner].name) || r.winner).replace(/&amp;/g, "&");
+    window.__blockResult = resultName;  // carried into the Apply form so the application email shows their result
+    saveLead({ timestamp: new Date().toISOString(), result: r.winner, scores: r.scores });
+    renderResult(r.winner);
+  }
+
+  function renderResult(charge){
+    var r = RESULTS[charge];
+    var screen = el(
+      '<div class="cf-screen">' +
+        '<p class="cf-eyebrow">Deine dominante Ladung</p>' +
+        '<h2 class="cf-result-name">' + r.name + '</h2>' +
+        '<p class="cf-result-body">' + r.body + '</p>' +
+        '<a class="btn btn-gold cf-block" href="' + APPLY_URL + '">Das bin ich → Bewirb dich für dein Klarheits-Gespräch</a>' +
+        '<div class="cf-retake-row"><button class="cf-textlink" id="cf-retake">Test wiederholen</button></div>' +
+      '</div>'
+    );
+    screen.querySelector("#cf-retake").onclick = function(){
+      answers = new Array(STATEMENTS.length).fill(null); qIndex = 0; renderIntro();
+    };
+    swap(screen);
+  }
+
+  /* ---- Owner-only CSV download bar (visit page with #submissions) ---- */
+  function maybeRenderAdmin(){
+    if ((location.hash || "").toLowerCase() !== "#submissions") return;
+    var bar = el('<div class="cf-admin"><button id="cf-dl">⬇ Einträge herunterladen (CSV)</button></div>');
+    bar.querySelector("#cf-dl").onclick = downloadSubmissionsCSV;
+    document.querySelector("#charge-finder .wrap").appendChild(bar);
+  }
+
+  /* ---------------- Start ---------------- */
+  renderIntro();
+  maybeRenderAdmin();
+})();
+</script>
+
+<!-- ============================== STATISTIC BAND ============================== -->
+<section class="section navy-d stat-band center">
+  <div class="wrap narrow reveal">
+    <p class="stat-line"><span class="stat-num">76%</span>der Menschen sterben mit demselben Bedauern – dass sie nie geworden sind, wer sie hätten sein können.</p>
+    <p class="stat-source">Forschung der Cornell University (Davidai &amp; Gilovich)</p>
+    <p class="stat-note">Lass nicht einen alten Block dieses Ende für dich schreiben.</p>
+  </div>
+</section>
+
+<!-- ============================== THE PROBLEM (pale, centered) ============================== -->
+<section class="section pale center" id="problem">
+  <div class="wrap narrow stack-lg reveal">
+    <p class="eyebrow">Kommt dir das bekannt vor?</p>
+    <h2 class="title">Du hast den Erfolg aufgebaut. Die Familie. Den Namen.</h2>
+    <p class="lead">Warum fühlt sich die Zukunft dann <span class="gold">beängstigend</span> an statt aufregend?</p>
+    <p class="body">Es ist nicht die Strategie. Es ist nicht die Zeit. Es ist ein Block, den deine Vergangenheit dort hinterlassen hat.</p>
+  </div>
+</section>
+
+<!-- ============================== BANNER QUOTE (navy, standalone) ============================== -->
+<section class="section navy center">
+  <div class="wrap narrow reveal">
+    <p class="lead i" style="font-size:clamp(1.7rem,3.6vw,2.7rem);line-height:1.32;margin:0;">„Das grösste Geschenk, das Claudia mir gemacht hat, war Klarheit – und sie hat nicht nur mein Business verändert, sondern mein Leben. Eine der besten Investitionen, die ich je getätigt habe.“</p>
+    <p class="body" style="margin:1.6rem auto 0;color:var(--gold);font-style:normal;">— Saleema Vellani, Gründerin &amp; CEO von Ripple Impact, Washington DC, USA</p>
+  </div>
+</section>
+
+<!-- ============================== BEFORE / AFTER (pale) ============================== -->
+<section class="section pale">
+  <div class="wrap cols">
+    <div class="reveal">
+      <p class="col-head">Wo du jetzt stehst</p>
+      <ul class="list">
+        <li>Unsicher, was als Nächstes kommt</li>
+        <li>Verloren nach dem Auszug der Kinder, einer Scheidung oder dem Verkauf deines Unternehmens</li>
+        <li>Die Vergangenheit bestimmt noch immer deine Tage und Gefühle</li>
+        <li>Warten auf den „richtigen Moment“, der nie kommt</li>
+      </ul>
+    </div>
+    <div class="reveal d1">
+      <p class="col-head">Wo du sein wirst</p>
+      <ul class="list">
+        <li>Klar darüber, was als Nächstes kommt</li>
+        <li>Wieder ganz du selbst – leichter, freier</li>
+        <li>Im Frieden mit der Vergangenheit</li>
+        <li>Bereit, den ersten Schritt zu gehen</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== THE REFRAME (navy, centered) ============================== -->
+<section class="section navy center reframe">
+  <div class="wrap narrow stack-lg reveal">
+    <img class="dbf-img" src="assets/logo-butterfly.png" alt="" style="margin:0 auto 1rem;display:block;" />
+    <h2 class="big">Mit dir ist nichts falsch.</h2>
+    <p class="body" style="margin-inline:auto;">Du bist nicht faul, und du bist nicht zu spät dran. Was dich aufhält, ist nicht Willenskraft oder ein weiterer Plan – es ist <span class="gold" style="font-family:var(--serif);font-size:1.7em;font-weight:500;">ein alter Block.</span></p>
+    <p class="lead">Hebe ihn, und die Dinge kommen in Bewegung.</p>
+  </div>
+</section>
+
+<!-- ============================== WHO IT'S FOR (pale) ============================== -->
+<section class="section pale">
+  <div class="wrap cols">
+    <div class="reveal">
+      <p class="col-head">Das ist für dich, wenn –</p>
+      <ul class="list">
+        <li>Eine Scheidung, ein Umzug oder ein leeres Nest verändert haben, wer du bist</li>
+        <li>Du ein nächstes Kapitel kommen spürst – es aber nicht beginnen kannst</li>
+        <li>Du fürchtest, es könnte zu spät sein</li>
+        <li>Die Rolle, die dich ausgemacht hat, dir entgleitet</li>
+        <li>Du das Unternehmen, das du aufgebaut hast, verkauft oder verlassen hast</li>
+      </ul>
+    </div>
+    <div class="reveal d1">
+      <p class="col-head">Nicht für dich, wenn –</p>
+      <ul class="list">
+        <li>Du mehr Tipps, Taktiken oder noch einen Kurs willst</li>
+        <li>Du Zuspruch willst, nicht die Wurzel</li>
+        <li>Du dir keinen einzigen ehrlichen Nachmittag gönnst</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== THE SESSION (navy, centered) ============================== -->
+<section class="section navy center session" id="session">
+  <div class="wrap narrow stack-lg reveal">
+    <p class="eyebrow">Die Session</p>
+    <h2 class="price-name">Der <span class="gold">4-Stunden-</span><br/>Identitäts-Reset</h2>
+    <p class="lead">Ein Block gelöst. Ein Nachmittag.<br/>Und du <span class="gold">atmest wieder.</span></p>
+  </div>
+</section>
+
+<!-- ============================== INCLUDED + PRICE (pale) ============================== -->
+<section class="section pale">
+  <div class="wrap reveal">
+    <p class="eyebrow center">Was enthalten ist</p>
+    <div class="stack-card">
+      <div class="price-line"><span class="pname">Der 4-Stunden-Identitäts-Reset <span class="ptag">Privat 1:1</span></span><span class="pval">$925</span></div>
+      <div class="price-line"><span class="pname"><span class="gift">🎁</span>Deine persönliche Block-Analyse</span><span class="pval">$260</span></div>
+      <div class="price-line"><span class="pname"><span class="gift">🎁</span>Hold-the-Shift Call – 20 Minuten, eine Woche später</span><span class="pval">$200</span></div>
+      <div class="price-line"><span class="pname"><span class="gift">🎁</span>Das Reset-Workbook</span><span class="pval">$120</span></div>
+      <div class="price-line"><span class="pname"><span class="gift">🎁</span>Der Block-Finder</span><span class="pval">$50</span></div>
+      <div class="price-line"><span class="pname"><span class="gift">🎁</span>Die Shift-Garantie<span class="psub">Spüre die Veränderung noch am selben Tag – oder du zahlst nicht</span></span><span class="pval free">enthalten</span></div>
+      <div class="price-line"><span class="pname"><span class="gift">🎁</span>Der Dankbarkeits-Kreis</span><span class="pval free">gratis für frühe Kundinnen</span></div>
+      <div class="price-total"><span>Gesamtwert</span><span class="pval">$1,555</span></div>
+      <div class="founding">
+        <p class="eyebrow" style="margin-bottom:.6rem;">Launch-Angebot</p>
+        <div class="fp"><span class="gold">$555</span></div>
+        <p class="only">nur 6 in diesem Monat</p>
+        <a class="btn btn-gold" href="#charge-finder">Finde deinen Block →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- butterfly divider -->
+<div class="pale"><div class="bdiv"><span class="ln"></span><img class="dbf-img" src="assets/logo-butterfly.png" alt="" /><span class="ln"></span></div></div>
+
+<!-- ============================== ABOUT (cream · podcast in soft panel) ============================== -->
+<section class="section navy about" id="about">
+  <div class="wrap about-grid">
+    <div class="photo-panel reveal">
+      <img src="assets/portrait-about.png" alt="Claudia Masüger bei der Aufnahme ihres Podcasts" />
+    </div>
+    <div class="stack-lg reveal d1">
+      <p class="eyebrow">Geschichte</p>
+      <h2 class="lead first">Nach aussen erfolgreich.<br/>Innen <span class="gold">verloren.</span></h2>
+      <p class="body">Ich habe in China zwei Multimillionen-Dollar-Unternehmen aufgebaut – darunter CHEERS, über 160 Weinboutiquen in einem der härtesten Märkte. Ich lebte für die Intensität. Ich war süchtig nach dem Adrenalin.</p>
+      <p class="body">Bis mein Körper stehen blieb. Acht Monate lang wachte ich in Tränen auf – ich, die Frau, die nie weint.</p>
+      <p class="body">Ich suchte nach der Bedeutung hinter den Tränen – und fand eine Methode, die in einer einzigen Session schaffte, was Jahre des Suchens nicht konnten. Ich habe sie gemeistert, mit allem verbunden, was das Business mir beigebracht hat, und <span class="gold">FLOWmentum™</span> erschaffen. Heute helfe ich anderen, den einen Block aus dem Weg zu räumen – und ein Leben zu gestalten, das ihnen Gänsehaut macht.</p>
+    </div>
+  </div>
+</section>
+
+<!-- butterfly divider -->
+<div class="pale"><div class="bdiv"><span class="ln"></span><img class="dbf-img" src="assets/logo-butterfly.png" alt="" /><span class="ln"></span></div></div>
+
+<!-- ============================== TESTIMONIALS (pale) ============================== -->
+<section class="section pale">
+  <div class="wrap stack-lg">
+    <p class="eyebrow center reveal">Kundinnen in den USA, Europa und Asien</p>
+    <div class="cards">
+      <figure class="card reveal"><div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <blockquote class="quote">„Vergangene Erfahrungen hatten mich jahrelang im Griff. Claudia hat sie so tief gelöst, dass mich heute stärkt, was mich einst zurückhielt.“</blockquote>
+        <figcaption class="cite"><span class="cname">Verena von Horsten</span><span class="crole">Preisgekrönte Sängerin &amp; Gründerin von „The Sacred Path of Love“ · <span class="cloc">San Francisco, USA</span></span></figcaption></figure>
+      <figure class="card reveal d1"><div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <blockquote class="quote">„Jahrelang prägten unbewusste Muster meine Entscheidungen und hielten mich davon ab, mich frei zu fühlen. Claudia half mir, sie auf einer tiefen Ebene zu lösen – und mit Leichtigkeit, Selbstvertrauen und Freiheit voranzugehen.“</blockquote>
+        <figcaption class="cite"><span class="cname">Victoria Blaha</span><span class="crole">Apothekerin, baut ihr eigenes Unternehmen auf · <span class="cloc">Wien, Österreich</span></span></figcaption></figure>
+      <figure class="card reveal d2"><div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <blockquote class="quote">„Ihr Ansatz brachte Einsichten ans Licht, an die ich nie gedacht hätte. Ich traf meine Entscheidung ohne Schuld und ohne Zögern.“</blockquote>
+        <figcaption class="cite"><span class="cname">ZhouHan Brown</span><span class="crole">Partnerin, Acclime Group · <span class="cloc">Peking, China</span></span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- butterfly divider -->
+<div class="pale"><div class="bdiv"><span class="ln"></span><img class="dbf-img" src="assets/logo-butterfly.png" alt="" /><span class="ln"></span></div></div>
+
+<!-- ============================== FAQ (cream) ============================== -->
+<section class="section cream">
+  <div class="wrap faq stack-lg">
+    <p class="eyebrow center reveal">Fragen</p>
+    <div class="reveal">
+      <details><summary>Was genau ist das? <span class="pm" aria-hidden="true"></span></summary>
+        <p class="answer">Eine private Eins-zu-eins-Transformations-Session. Keine Therapie, kein Ratschlag – gemeinsam finden wir den einen emotionalen Block, der dich zurückhält, und lösen ihn an der Wurzel. Ich bin für diesen Nachmittag deine Transformations-Partnerin.</p></details>
+      <details><summary>Kann eine Session wirklich genügen? <span class="pm" aria-hidden="true"></span></summary>
+        <p class="answer">Für einen Block, ja. Die meisten Frauen spüren die Veränderung noch am selben Tag. Es baut nicht dein ganzes Leben an einem Nachmittag neu auf – aber es hebt das eine, das dich festgehalten hat.</p></details>
+      <details><summary>Was, wenn es bei mir nicht funktioniert? <span class="pm" aria-hidden="true"></span></summary>
+        <p class="answer">Dann zahlst du nicht. Wenn sich der Block an dem Tag nicht bewegt, bekommst du dein Geld vollständig zurück. Das Risiko liegt bei mir, nicht bei dir.</p></details>
+      <details><summary>Ist es das wert? <span class="pm" aria-hidden="true"></span></summary>
+        <p class="answer">Wahrscheinlich hast du Jahre – und weit mehr als das – damit verbracht, dich um diesen Block herumzuarbeiten. Ein konzentrierter Nachmittag, um ihn zu lösen, ist das Beste, was ich anbiete. Deshalb kostet es gerade jetzt nur $555.</p></details>
+      <details><summary>Warum jetzt? <span class="pm" aria-hidden="true"></span></summary>
+        <p class="answer">Nichts ändert sich, solange der Block noch da ist. Wieder vergeht ein Jahr in derselben Schleife. Es gibt nur 6 Plätze in diesem Monat.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA (navy) ============================== -->
+<section class="section navy final">
+  <div class="wrap reveal final-col">
+    <h2 class="title">Stell dir vor, du wachst nächste Woche auf und fühlst dich <span class="gold">leichter</span> als seit Jahren.</h2>
+    <div class="signoff-frame">
+      <div class="frame-photo"><img src="assets/portrait-headshot.png" alt="Claudia Masüger" loading="lazy" /></div>
+      <div class="frame-caption">Bereit<br>loszulegen.</div>
+    </div>
+    <a class="btn btn-gold final-btn" href="#charge-finder">Finde deinen Block →</a>
+    <p class="msg-direct">Oder schreib Claudia direkt →</p>
+    <div class="contact-row">
+        <a href="https://api.whatsapp.com/send?phone=41788068760">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.33 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43l-.48-.01c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+          WhatsApp</a>
+        <!--email_off--><a href="mailto:claudia@masueger.com">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          claudia@masueger.com</a><!--/email_off-->
+    </div>
+    <p class="sessions-line">Sessions auf Englisch oder Deutsch.</p>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer">
+  <div class="wrap">
+    <img class="flogo" src="assets/logo-footer.png" alt="FLOWmentum™" />
+    <div class="links">
+      <a href="https://www.claudiamasueger.com/apply-now">Für ein persönliches Gespräch bewerben</a>
+      <a href="https://api.whatsapp.com/send?phone=41788068760">WhatsApp</a>
+      <a href="mailto:claudia@masueger.com">claudia@masueger.com</a>
+    </div>
+    <p class="fineline">FLOWmentum™ <span class="dot">·</span> Silvaplana, Schweiz</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      els.forEach(function (e){ e.classList.add('in'); }); return;
+    }
+    var io = new IntersectionObserver(function (entries){
+      entries.forEach(function (entry){ if (entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+    els.forEach(function (e){ io.observe(e); });
+  })();
+</script>
+
+<script>
+  /* Charge Finder popup: open on any "Find your block" link, close on backdrop / × / Esc. */
+  (function(){
+    var modal=document.getElementById('cf-modal');
+    if(!modal) return;
+    function openCF(e){ if(e&&e.preventDefault) e.preventDefault(); modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('cf-lock'); }
+    function closeCF(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('cf-lock'); }
+    document.querySelectorAll('a[href="#charge-finder"]').forEach(function(a){ a.addEventListener('click', openCF); });
+    modal.querySelectorAll('[data-cf-close]').forEach(function(b){ b.addEventListener('click', closeCF); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeCF(); });
+  })();
+</script>
+</body>
+</html>
