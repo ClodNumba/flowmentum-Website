@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Live Your Priorities · FLOWmentum™</title>
+<meta name="description" content="FLOWmentum™ workbook, chapter 2: find your three or four highest priorities in about 25 minutes. Answers stay on your device.">
+<meta property="og:title" content="Live Your Priorities · FLOWmentum™">
+<meta property="og:description" content="Rate your 8 areas of life, discover what you actually prioritize, group it, and declare your top priorities. Free, 25 minutes, nothing leaves your device.">
+<meta property="og:image" content="https://flowmentum.world/priorities/assets/og-image.png">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Figtree:wght@300;400;500;600&display=swap">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: one long scroll in the claudiamasueger.com look — navy hero, light workbook sections, gold accents; serif display, geometric sans body. */
+:root{
+  --navy:#050E1A; --navy-2:#0F2D52; --blue:#6DA5D0; --blue-soft:#E7F0FA; --gold:#C9A25D; --gold-deep:#A9843F;
+  --bg:#F5F8FC; --surface:#FFFFFF; --fg:#0B1A2E; --muted:#4F6378; --hint:#8EA1B6; --line:#D3DEEA; --field:#FBFCFE;
+  --display:"Libre Baskerville",Georgia,"Times New Roman",serif;
+  --sans:"Figtree","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#071323; --surface:#0E1F36; --fg:#EAF1F9; --muted:#A9BBD0; --hint:#6F85A0; --line:#24405F; --field:#0A1830; --blue-soft:#12284A; --navy-2:#9CC3E6; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#071323; --surface:#0E1F36; --fg:#EAF1F9; --muted:#A9BBD0; --hint:#6F85A0; --line:#24405F; --field:#0A1830; --blue-soft:#12284A; --navy-2:#9CC3E6; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+.band-inner{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0 0 1em}
+.eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top .band-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.logo img{height:14px;width:auto;display:block}
+.progress{display:flex;align-items:center;gap:10px;font-size:.78rem;color:var(--blue);font-variant-numeric:tabular-nums}
+.bar{width:90px;height:3px;background:rgba(255,255,255,.14);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero .band-inner{padding-block:56px 60px;position:relative}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.15;color:var(--blue);margin:14px 0 18px}
+.hero h1 em{font-style:italic;color:#fff}
+.hero p{max-width:30em;color:#C9D7E6;font-weight:300;font-size:1.05rem}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:.8rem;color:var(--blue);letter-spacing:.06em}
+.butterfly{position:absolute;right:0;top:34px;width:min(36vw,260px);height:auto;pointer-events:none}
+@media (max-width:640px){.butterfly{width:150px;top:auto;bottom:-6px;opacity:.45}}
+
+section{padding-block:52px}
+section:nth-of-type(even){background:var(--surface)}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(1.5rem,3.5vw,2rem);line-height:1.25;color:var(--navy-2)}
+.intro{color:var(--muted);max-width:40em;font-weight:300}
+.rule{height:1px;background:var(--gold);width:48px;margin-top:4px}
+
+.q{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.q label{font-weight:500;font-size:.98rem}
+.hint{font-size:.82rem;color:var(--muted);font-weight:300}
+textarea,input[type=text]{width:100%;font:inherit;font-weight:300;color:var(--fg);background:var(--field);border:1px solid var(--line);border-radius:6px;padding:12px 14px;resize:vertical;min-height:52px;line-height:1.5}
+textarea{min-height:84px}
+textarea::placeholder,input::placeholder{color:var(--hint);font-weight:300;font-style:italic}
+textarea:focus,input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+
+/* 8 areas */
+.areas{display:grid;gap:14px}
+.area{border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:8px;padding:16px 18px;background:var(--surface)}
+section:nth-of-type(even) .area{background:var(--bg)}
+.area-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.area h3{font-family:var(--display);font-weight:400;font-size:1.1rem;color:var(--navy-2)}
+.area .sub{font-size:.85rem;color:var(--muted);font-weight:300;margin:2px 0 12px}
+.score{font-family:var(--display);color:var(--gold);font-size:1.1rem;min-width:3ch;text-align:right;font-variant-numeric:tabular-nums}
+.scale{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin-bottom:6px}
+.scale label{position:relative;display:block}
+.scale input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.scale span{display:block;text-align:center;font-size:.85rem;padding:9px 0;border:1px solid var(--line);border-radius:5px;background:var(--field);color:var(--muted);cursor:pointer;user-select:none;font-variant-numeric:tabular-nums}
+.scale input:checked+span{background:var(--navy-2);color:#fff;border-color:var(--navy-2);font-weight:600}
+:root[data-theme="dark"] .scale input:checked+span{color:var(--navy)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .scale input:checked+span{color:var(--navy)}}
+.scale input:focus-visible+span{outline:2px solid var(--gold)}
+.scale-ends{display:flex;justify-content:space-between;font-size:.72rem;color:var(--hint);margin-bottom:12px}
+.area input[type=text]{min-height:44px;padding:9px 12px}
+.hurt{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:10px;font-size:.85rem}
+.hurtq{color:var(--muted);font-weight:300}
+.hurt label{position:relative;display:inline-flex}
+.hurt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.hurt label span{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--field);color:var(--muted);cursor:pointer}
+.hurt input:checked+span{border-color:var(--gold);color:var(--fg);background:rgba(201,162,93,.12)}
+.hurt input:focus-visible+span{outline:2px solid var(--gold)}
+.tag{display:inline-block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:999px;vertical-align:middle;margin-left:2px}
+.tag.drive{background:rgba(201,162,93,.18);color:var(--gold-deep)}
+.tag.quiet{background:rgba(109,165,208,.18);color:var(--muted)}
+.card.gapcard{background:var(--surface);color:var(--fg);border-color:var(--gold)}
+.card.gapcard.quiet{border-color:var(--line);color:var(--muted)}
+.card.gapcard.quiet .gapmark{color:var(--muted)}
+.gapmark{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-right:2px}
+.gaplegend{margin-top:8px}
+.prompts{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}
+.prompts .chip{font-style:normal}
+#vlist .vrow{grid-template-columns:auto 1fr auto}
+.values #vlist input[type=text]{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.35)}
+.vmove{display:flex;flex-direction:column;gap:2px}
+.mv{font:inherit;font-size:.6rem;line-height:1;background:transparent;color:var(--blue);border:1px solid rgba(255,255,255,.25);border-radius:4px;width:26px;height:22px;cursor:pointer}
+.mv:hover{border-color:var(--gold);color:var(--gold)}
+.gsuggest{display:grid;gap:6px}
+.sugs{display:flex;flex-wrap:wrap;gap:6px}
+.sugs .chip{font-style:normal;text-align:left}
+.airow{display:flex;flex-direction:column;gap:6px;margin-top:2px;align-items:flex-start}
+.airow .aibox{align-self:stretch}
+.aibox{background:var(--blue-soft);border-radius:8px;padding:12px 14px;font-weight:300}
+.values .aibox{background:rgba(255,255,255,.08)}
+.aitext{white-space:pre-wrap}
+.card.inhcard{background:var(--surface);color:var(--fg);border-color:var(--blue)}
+.card.inhcard .gapmark{color:var(--blue)}
+
+/* result panels */
+.panel{background:var(--blue-soft);border-radius:10px;padding:22px 22px 14px;margin:26px 0}
+.panel h3{font-family:var(--display);font-weight:400;font-size:1.15rem;color:var(--navy-2);margin-bottom:4px}
+.panel>.hint{margin-bottom:14px;display:block}
+.rows{display:grid;gap:9px}
+.row{display:grid;grid-template-columns:minmax(120px,38%) 1fr auto;align-items:center;gap:12px;font-size:.92rem}
+#themeRows .row,#groupRank .row{grid-template-columns:22px minmax(110px,36%) 1fr auto}
+.rk{font-family:var(--display);color:var(--gold);font-size:.95rem;text-align:right}
+.pool{display:flex;flex-wrap:wrap;gap:8px;min-height:46px;padding:10px;border:1px dashed var(--line);border-radius:8px;background:var(--surface);margin:14px 0 10px}
+.pool.over,.gdrop.over{border-color:var(--gold);background:rgba(201,162,93,.08)}
+.card{display:inline-flex;align-items:center;gap:6px;padding:6px 10px 6px 12px;border-radius:999px;background:var(--navy-2);color:#fff;font-size:.82rem;font-weight:500;cursor:grab;user-select:none;border:2px solid transparent}
+.card b{font-weight:400;opacity:.75;font-variant-numeric:tabular-nums}
+.card.dragging{opacity:.4}
+.card.picked{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,93,.25)}
+.card .rm{margin-left:2px;opacity:.7;cursor:pointer;font-size:.95rem;line-height:1}
+.card .rm:hover{opacity:1;color:var(--gold)}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.board{grid-template-columns:1fr}}
+.group{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.group.blank{opacity:.85}
+.ghead{display:flex;align-items:center;gap:8px}
+.gname{flex:1;min-width:0;min-height:36px;padding:6px 10px;font-weight:500;font-size:.9rem}
+.gscore{font-family:var(--display);color:var(--gold);font-size:1rem;min-width:3.5ch;text-align:right;font-variant-numeric:tabular-nums}
+.gdrop{min-height:84px;flex:1;display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start;padding:8px;border:1px dashed var(--line);border-radius:6px}
+.dropHint{color:var(--hint);font-size:.8rem;font-style:italic;align-self:center;width:100%;text-align:center}
+.addgroup{font:inherit;font-size:.82rem;color:var(--muted);background:transparent;border:1px dashed var(--line);border-radius:8px;min-height:44px;cursor:pointer;grid-column:1/-1}
+.addgroup:hover{border-color:var(--gold);color:var(--fg)}
+.pickhint{margin:-4px 0 10px;color:var(--gold-deep)}
+details.more{padding:16px 22px}
+details.more summary{cursor:pointer;font-weight:500;color:var(--navy-2);list-style:none}
+details.more summary::before{content:"+ ";color:var(--gold)}
+details[open].more summary::before{content:"– "}
+.btn:disabled{opacity:.45;cursor:default}
+.btn:disabled:hover{background:var(--gold);color:var(--navy)}
+.row .nm{font-weight:500;min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.row .words{font-size:.74rem;color:var(--muted);font-weight:300;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row.lead .words{color:var(--gold-deep)}
+#groupRank .words,#gapRows .words{white-space:normal}
+.row .tr{height:8px;background:rgba(109,165,208,.22);border-radius:4px;overflow:hidden}
+.row .tr i{display:block;height:100%;background:var(--blue);border-radius:4px;transition:width .3s}
+.row.lead .tr i{background:var(--gold)}
+.row .ct{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.85rem;min-width:4ch;text-align:right}
+.row.lead .ct{color:var(--gold);font-weight:600}
+.empty{color:var(--muted);font-weight:300;font-size:.92rem;font-style:italic}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{font:inherit;font-size:.8rem;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.chip:hover{border-color:var(--gold);color:var(--fg)}
+.chip b{font-weight:600;color:var(--fg)}
+.panel .actions{margin-top:16px}
+
+/* 10 questions */
+.ten{counter-reset:q;display:grid;gap:18px}
+.ten .q{position:relative;padding-left:46px;margin:0}
+.ten .q::before{counter-increment:q;content:counter(q,decimal-leading-zero);position:absolute;left:0;top:0;font-family:var(--display);color:var(--gold);font-size:1.05rem;line-height:1.5}
+.ten input{min-height:48px}
+
+ol.steps{margin:10px 0 0;padding-left:1.3em}
+ol.steps li{margin-bottom:6px}
+ol.steps li::marker{color:var(--gold);font-weight:600}
+
+/* 2.5 */
+section.values,section.values:nth-of-type(even){background:var(--navy);color:#fff}
+.values .sec-head h2,.values .panel h3{color:var(--blue)}
+.values .intro{color:#C9D7E6}
+.vrow{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:16px;margin-bottom:14px}
+.vrow .n{font-family:var(--display);font-size:1.6rem;color:var(--gold);width:1.4em}
+.vrow input{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:#fff;font-family:var(--display);font-size:1.15rem;min-height:56px}
+.values .q label{color:#fff}
+.values textarea,.values input[type=text]{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:#fff}
+.values ::placeholder{color:rgba(255,255,255,.4)}
+.closing{font-family:var(--display);font-style:italic;font-size:1.15rem;color:#C9D7E6;border-left:2px solid var(--gold);padding-left:18px;margin:26px 0;max-width:34em}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0 26px;padding:0;list-style:none}
+.benefits li{display:flex;gap:10px;align-items:flex-start;font-weight:300;color:#EAF1F9}
+.benefits li::before{content:"";flex:none;width:16px;height:16px;border:1.5px solid var(--gold);border-radius:50%;margin-top:4px;background:radial-gradient(circle,var(--gold) 0 30%,transparent 32%)}
+
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
+.btn{font:inherit;font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--navy);border:0;border-radius:10px;padding:13px 20px;cursor:pointer}
+.btn:hover{background:var(--gold-deep);color:#fff}
+.btn.ghost{background:transparent;color:var(--gold);border:1.5px solid var(--gold)}
+.btn.ghost:hover{background:rgba(201,162,93,.12);color:var(--gold)}
+.btn.small{padding:9px 14px;font-size:.72rem}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.status{font-size:.82rem;color:var(--blue);min-height:1.2em}
+.printhint{font-size:.85rem;color:var(--muted);font-weight:300;margin-top:16px;max-width:40em}
+.values .printhint{color:#C9D7E6}
+kbd{font-size:.75em;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:1px 6px}
+footer{background:var(--navy);color:#8FA6BF;font-size:.78rem;padding-block:22px 34px;border-top:1px solid rgba(255,255,255,.08);letter-spacing:.04em}
+footer a{color:var(--blue);text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media print{
+  @page{size:A4;margin:16mm 14mm}
+  body{background:#fff;color:#000;font-size:11pt}
+  .top,.actions,.printhint,.butterfly,footer,.status{display:none!important}
+  .hero,.values{background:#fff!important;color:#000!important}
+  .hero h1,.sec-head h2,.area h3,.panel h3{color:#0F2D52!important}
+  .hero p,.intro,.closing,.benefits li,.values .q label{color:#333!important}
+  .hero .band-inner{padding-block:0 16px}
+  section{padding-block:16px}
+  section:nth-of-type(even){background:#fff}
+  .area,.q,.panel{break-inside:avoid}
+  .area,.panel{background:#fff!important;border:1px solid #bbb}
+  .scale span{border-color:#999;color:#333}
+  .scale input:checked+span{background:#0F2D52!important;color:#fff!important}
+  textarea,input[type=text]{border:1px solid #999;background:#fff!important;color:#000!important;resize:none}
+  .row .tr{border:1px solid #999}
+  .pool,.pickhint,.addgroup,.card .rm,.gsuggest,.airow,.vmove{display:none!important}
+  .card{background:#0F2D52!important;color:#fff!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .group.blank{display:none}
+  .gname{border:0;padding:0;font-weight:600}
+  .row .tr i{background:#6DA5D0!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .pb{break-before:page}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="band-inner">
+    <a class="logo" href="https://flowmentum.world" target="_blank" rel="noopener" aria-label="FLOWmentum"><img src="assets/wordmark.png" alt="FLOWmentum" width="560" height="60"></a>
+    <div class="progress" aria-live="polite"><span id="pct">0 % completed</span><span class="bar"><i id="barfill"></i></span></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="band-inner">
+    <div class="eyebrow">FLOWmentum™ Workbook · Chapter 2</div>
+    <h1>Live Your <em>Priorities.</em></h1>
+    <p>When your priorities are clear, decisions get easier and your energy comes back. In the next 25 minutes you'll find your top 3 or 4.</p>
+    <div class="meta"><span>≈ 25 minutes</span><span>5 short exercises</span><span>Answers stay on this device</span></div>
+    <img class="butterfly" id="bflyImg" src="assets/butterfly.png" alt="" width="720" height="431">
+  </div>
+</div>
+
+<form id="wb" autocomplete="off">
+
+<section id="s21">
+  <div class="band-inner">
+    <div class="sec-head"><div class="eyebrow">Exercise 2.1</div><h2>What do you want most right now?</h2><div class="rule"></div></div>
+    <div class="q"><label for="q21a">Who are you stepping up for in your life right now?</label><input type="text" id="q21a" name="q21a" placeholder="e.g. my daughters · my team · myself, finally"></div>
+    <div class="q"><label for="q21b">What do you want to change — and why?</label><textarea id="q21b" name="q21b" placeholder="e.g. Stop saying yes to everything, because I'm running on empty and no longer feel excited about Monday."></textarea></div>
+  </div>
+</section>
+
+<section id="s22">
+  <div class="band-inner">
+    <div class="sec-head"><div class="eyebrow">Exercise 2.2</div><h2>Where are your missing pieces?</h2><div class="rule"></div></div>
+    <p class="intro">What you long for most usually points to what has felt missing. These gaps aren't flaws; they are clues to what matters to you. Rate each of the 8 areas of life as it feels <em>today</em>, then add 1–3 words on what's missing where the score is low.</p>
+    <div class="areas" id="areas"></div>
+
+    <div class="panel" id="gapPanel">
+      <h3>Your biggest gaps</h3>
+      <span class="hint">Your lowest scores come first. The three lowest are marked in gold.<br>For every area with a score of 5 or less, answer one question: <strong>does this gap hurt?</strong><br>Hurts = it matters to you, you just aren't living it yet. Don't mind = it's simply not important to you right now.</span>
+      <div class="rows" id="gapRows"><div class="empty">Rate the areas above and your ranking appears here.</div></div>
+      <p class="hint" id="gapNote" style="margin:14px 0 0"></p>
+    </div>
+
+    <div class="q"><label for="q22sum">What do your lowest areas have in common?</label>
+      <div class="prompts" id="sumPrompts">
+        <button type="button" class="chip">They're all about being seen or received by others</button>
+        <button type="button" class="chip">They all used to be covered by something that has ended</button>
+        <button type="button" class="chip">They're all about safety and control</button>
+        <button type="button" class="chip">They're areas I was told to value, not ones I chose</button>
+      </div>
+      <input type="text" id="q22sum" name="q22sum" placeholder="Tap a prompt or write your own, e.g. All three are where I'm received by the outside world"></div>
+  </div>
+</section>
+
+
+<section id="s24">
+  <div class="band-inner">
+    <div class="sec-head"><div class="eyebrow">Exercise 2.3</div><h2>What do you actually value and prioritize in your life?</h2><div class="rule"></div></div>
+    <p class="intro">Not what you think you <em>should</em> care about: what your life already shows. Answer each of the 9 questions with <strong>1–3 keywords</strong>. Your pattern appears below as you type.</p>
+    <div class="ten" id="ten"></div>
+
+    <div class="panel" id="themePanel">
+      <h3>Your emerging pattern</h3>
+      <span class="hint">We sorted your words into themes. The number shows in how many of your 9 answers a theme appears. Under each theme you see the words you wrote. Your three strongest themes are marked in gold.</span>
+      <div class="rows" id="themeRows"><div class="empty">Answer a few questions and your themes appear here.</div></div>
+      <div class="chips" id="rawChips"></div>
+    </div>
+
+    <div class="panel" id="boardPanel" hidden>
+      <h3>Group what belongs together</h3>
+      <span class="hint">Some of your themes belong together. Drag them into a group and give the group a name in your own words. That name becomes one of your priorities.<br>On a phone: tap a theme, then tap the group. Need a name? Press <em>Suggest a name</em> in the group.</span>
+      <span class="hint gaplegend" id="gapLegend" hidden>The outlined chips are your biggest gaps from 2.2. Gold = it hurts. Grey = you don't mind. Drag a gap into the group it belongs to; that shows you which priority will close the gap.</span>
+      <div class="pool" id="pool"></div>
+      <div class="pickhint hint" id="pickHint" hidden>Now tap the group it belongs to.</div>
+      <div class="board" id="board"></div>
+      <div id="groupRank" class="rows" style="margin-top:14px"></div>
+      <p class="hint" id="groupHint" style="margin-top:12px">Your group names are copied into exercise 2.4 automatically. You can still change the words there.</p>
+    </div>
+
+    <p class="intro">Now compare: does your strongest group contain a gap that hurts? Then you've found a priority you want but aren't living yet. A strong group with no gap is a priority you already live.</p>
+    <div class="q"><label for="q24notes">Themes · Patterns · Notes</label><textarea id="q24notes" name="q24notes" placeholder="e.g. Growth shows up 7 times but Health scored 3/10 — I'm feeding my mind and starving my body."></textarea></div>
+  </div>
+</section>
+
+<section id="s25" class="values pb">
+  <div class="band-inner">
+    <div class="sec-head"><div class="eyebrow">Exercise 2.4</div><h2>Declare your 3 or 4 highest priorities</h2><div class="rule"></div></div>
+    <p class="intro">Your group names appear here. Rewrite them in your own words, short and clear. Three is enough; the fourth is optional. Use the arrows to put them in the order that feels right.</p>
+    <div id="vlist">
+    <div class="vrow"><span class="n">1</span><input type="text" id="v1" name="v1" aria-label="Priority 1" placeholder="Your first priority"><span class="vmove"><button type="button" class="mv" data-v="1" data-d="-1" aria-label="Move up">▲</button><button type="button" class="mv" data-v="1" data-d="1" aria-label="Move down">▼</button></span></div>
+    <div class="vrow"><span class="n">2</span><input type="text" id="v2" name="v2" aria-label="Priority 2" placeholder="Your second priority"><span class="vmove"><button type="button" class="mv" data-v="2" data-d="-1" aria-label="Move up">▲</button><button type="button" class="mv" data-v="2" data-d="1" aria-label="Move down">▼</button></span></div>
+    <div class="vrow"><span class="n">3</span><input type="text" id="v3" name="v3" aria-label="Priority 3" placeholder="Your third priority"><span class="vmove"><button type="button" class="mv" data-v="3" data-d="-1" aria-label="Move up">▲</button><button type="button" class="mv" data-v="3" data-d="1" aria-label="Move down">▼</button></span></div>
+    <div class="vrow"><span class="n">4</span><input type="text" id="v4" name="v4" aria-label="Priority 4" placeholder="Optional fourth priority"><span class="vmove"><button type="button" class="mv" data-v="4" data-d="-1" aria-label="Move up">▲</button><button type="button" class="mv" data-v="4" data-d="1" aria-label="Move down">▼</button></span></div>
+    </div>
+    <div class="sec-head" style="margin-top:40px"><div class="eyebrow">Well done</div><h2>Knowing your priorities is the first step toward a life that gives you goosebumps.</h2></div>
+    <blockquote class="closing">When you live by your highest priorities, you stop pushing and start flowing. Decisions get lighter, energy returns, and the next chapter writes itself.</blockquote>
+    <p class="intro">Redo this exercise every 4 to 6 months. Transformation brings clarity, and with it your priorities may shift too.</p>
+    <div class="actions">
+      <button type="button" class="btn" id="makePdf">Create my PDF report</button>
+      <button type="button" class="btn ghost" id="copy">Copy my answers</button>
+      <span id="resetwrap"><button type="button" class="btn ghost" id="reset">Clear all answers</button></span>
+      <span class="status" id="status"></span>
+    </div>
+    <p class="printhint" id="pdfhint">"Create my PDF report" builds a designed summary of all your findings: your priorities, your gaps, your pattern and your groups. Everything is saved automatically on this device only.</p>
+  </div>
+  </div>
+</section>
+
+</form>
+
+<footer><div class="band-inner">FLOWmentum™ · Claudia Masüger · Silvaplana, Switzerland · <a href="https://flowmentum.world" target="_blank" rel="noopener">flowmentum.world</a></div></footer>
+
+<script src="vendor/jspdf.umd.min.js"></script>
+<script>
+(function(){
+  /* ---------- 8 areas ---------- */
+  var areas=[
+    ["Purpose","Meaning, inner calm, the sense that your life is about something bigger.","e.g. stillness · meaning"],
+    ["Mind","Learning, growth, mental clarity and curiosity.","e.g. focus · new ideas"],
+    ["Body","Health, energy, vitality, how you look and feel.","e.g. sleep · fitness"],
+    ["Work","Your business, career, craft and the impact you make through it.","e.g. challenge · recognition"],
+    ["Wealth","Earning, keeping and multiplying money; financial freedom.","e.g. security · investing"],
+    ["Family","Partner, children, parents: your closest circle.","e.g. quality time · intimacy"],
+    ["Community","Friends, network, the tribe you choose.","e.g. real friends · belonging"],
+    ["Legacy","What you leave behind: your contribution, what outlives you.","e.g. a book · mentoring"]];
+  var ah="";
+  areas.forEach(function(a,i){
+    ah+='<div class="area" data-i="'+i+'"><div class="area-top"><h3>'+a[0]+'</h3><span class="score" id="sc'+i+'">–</span></div><div class="sub">'+a[1]+'</div>';
+    ah+='<div class="scale" role="radiogroup" aria-label="'+a[0]+' fulfilment 1 to 10">';
+    for(var n=1;n<=10;n++){var id="r"+i+"_"+n;ah+='<label><input type="radio" name="r'+i+'" id="'+id+'" value="'+n+'"><span>'+n+'</span></label>';}
+    ah+='</div><div class="scale-ends"><span>1 · a lot is missing</span><span>10 · fully fulfilled</span></div>';
+    ah+='<input type="text" id="m'+i+'" name="m'+i+'" placeholder="What\'s missing here? '+a[2]+'" aria-label="What is missing in '+a[0]+'">';
+    ah+='<div class="hurt" id="h'+i+'wrap" hidden><span class="hurtq">Does this gap hurt?</span><label><input type="radio" name="h'+i+'" value="hurts"><span>Yes, I think about it a lot</span></label><label><input type="radio" name="h'+i+'" value="fine"><span>No, I don\'t mind much</span></label></div></div>';
+  });
+  document.getElementById("areas").innerHTML=ah;
+
+  /* ---------- 10 questions ---------- */
+  var ten=[
+    ["Where does your time go when nobody tells you what to do?","e.g. reading · hiking · my business"],
+    ["What do you spend money on without hesitating?","e.g. courses · travel · good food"],
+    ["Where do you have the most energy: what leaves you charged, not drained?","e.g. coaching sessions · mountains · creating"],
+    ["Where are you naturally organized and disciplined, even when no one checks?","e.g. finances · training · my calendar"],
+    ["What do you think and daydream about most?","e.g. the next venture · my daughter's future · freedom"],
+    ["What do you talk about, and keep steering conversations back to?","e.g. growth · wine · leadership"],
+    ["What inspires you deeply, who or what gives you goosebumps?","e.g. women who rebuild · nature · great speakers"],
+    ["What do you keep learning about: what you read, watch and listen to?","e.g. psychology · investing · health"],
+    ["What are your long-term goals, the ones you keep returning to without reminders?","e.g. a book · a second home · financial independence"]];
+  var th="";
+  ten.forEach(function(q,i){var id="t"+(i+1);th+='<div class="q"><label for="'+id+'">'+q[0]+'</label><input type="text" id="'+id+'" name="'+id+'" placeholder="'+q[1]+'"></div>';});
+  document.getElementById("ten").innerHTML=th;
+
+  /* ---------- theme dictionary: specific themes, EN + DE stems. Whole-word prefix match (stem >= 4 letters) or exact. ---------- */
+  var themes=[
+    ["Entrepreneurship",["business","entrepreneur","client","clients","customer","kunden","kunde","venture","startup","start-up","company","compan","firm","founder","found","unternehm","geschäft","gründ","firma","selbständig","selbstständig"]],
+    ["Career & Achievement",["career","achieve","achievement","success","promotion","ambition","perform","excellence","karriere","erfolg","leistung","ehrgeiz","exzellenz"]],
+    ["Leadership",["lead","leader","leadership","führ","führung","chef","boss"]],
+    ["Wealth & Investing",["money","wealth","financ","finance","finances","financial","invest","stock","income","profit","abundance","revenue","cash","rich","geld","vermögen","aktien","einkommen","umsatz","reich","wohlstand"]],
+    ["Financial Security",["security","safety","saving","savings","pension","insurance","stability","sicherheit","sparen","vorsorge","versicherung","stabilität"]],
+    ["Real Estate & Home",["house","home","property","real estate","apartment","interior","garden","haus","wohnung","immobilie","zuhause","garten","einricht","heim"]],
+    ["Self-Development",["growth","grow","develop","development","improve","potential","mindset","self-development","self development","self","transformation","transform","evolve","persönlich","wachs","wachstum","entwickl","potenzial","transformation","weiterentwick"]],
+    ["Learning & Knowledge",["learn","learning","study","course","read","reading","book","books","biograph","knowledge","education","seminar","workshop","lern","lernen","studium","kurs","lesen","buch","bücher","wissen","bildung","seminar"]],
+    ["Psychology & Human Behaviour",["psycholog","behaviour","behavior","emotion","mind","brain","neuro","subconscious","psychologie","verhalten","gefühl","gehirn","unterbewusst"]],
+    ["Spirituality",["spirit","spiritual","soul","faith","god","meditat","meditation","prayer","universe","energy work","seele","glaube","gott","gebet","universum","spirituell"]],
+    ["Purpose & Meaning",["purpose","meaning","mission","calling","vocation","sinn","berufung","mission","bestimmung"]],
+    ["Inner Peace & Balance",["peace","calm","stillness","silence","serenity","balance","harmony","ruhe","stille","frieden","gelassen","gelassenheit","balance","harmonie","ausgeglichen"]],
+    ["Mindfulness & Presence",["mindful","mindfulness","presence","present","awareness","aware","conscious","achtsam","achtsamkeit","präsenz","bewusst","bewusstsein"]],
+    ["Health & Vitality",["health","healthy","vital","vitality","energy","wellbeing","well-being","longevity","gesund","gesundheit","vital","energie","wohlbefinden","langlebig"]],
+    ["Fitness & Sport",["fitness","sport","gym","train","training","workout","run","running","jog","yoga","pilates","ski","skiing","bike","biking","cycling","hik","hiking","swim","tennis","golf","climb","laufen","joggen","wandern","schwimm","radfahr","velo","klettern","bewegung"]],
+    ["Nutrition & Food",["nutrition","food","eat","eating","diet","cook","cooking","cookbook","recipe","bak","baking","bake","ernähr","ernährung","essen","kochen","rezept","lebensmittel"]],
+    ["Wine & Culinary Pleasure",["wine","culinary","restaurant","dining","gourmet","tasting","wein","kulinar","genuss","geniess","genieß","restaurant","degustation"]],
+    ["Beauty & Style",["beauty","beautiful","style","fashion","cloth","clothes","clothing","cosmetic","cosmetics","makeup","skincare","kleid","kleidung","kosmetik","elegance","elegant","appearance","looks","aesthetic","schön","schönheit","stil","mode","eleganz","aussehen","ästhet"]],
+    ["Family",["family","families","familie"]],
+    ["Children",["kid","kids","child","children","daughter","son","baby","grandchild","grandchildren","kinder","kind","tochter","sohn","enkel"]],
+    ["Parents & Roots",["parent","parents","mother","father","mom","mum","dad","heritage","roots","ancestors","eltern","mutter","vater","mama","papa","wurzeln","herkunft","vorfahren"]],
+    ["Partnership & Love",["partner","partnership","husband","wife","love","relationship","romance","marriage","intimacy","intimate","liebe","beziehung","ehe","ehemann","ehefrau","partnerschaft","nähe","intim"]],
+    ["Friendship",["friend","friends","friendship","freund","freunde","freundin","freundschaft"]],
+    ["Community & Belonging",["community","tribe","network","networking","belong","belonging","group","gemeinschaft","netzwerk","zugehör","gruppe","verein"]],
+    ["Deep Connection & Conversation",["connection","connect","conversation","deep talk","exchange","dialogue","verbindung","verbund","gespräch","austausch","dialog"]],
+    ["Helping & Service",["help","helping","serve","service","support","give","giving","charity","volunteer","donat","helfen","dienen","unterstütz","geben","spenden","ehrenamt","wohltätig"]],
+    ["Coaching & Mentoring",["coach","coaching","mentor","mentoring","teach","teaching","guide","guiding","facilitat","begleit","lehren","unterricht"]],
+    ["Legacy & Impact",["legacy","impact","contribution","contribute","difference","generation","generations","leave behind","footprint","vermächtnis","wirkung","beitrag","hinterlass","generation","spuren"]],
+    ["Speaking & Influence",["speak","speaking","speaker","stage","talk","present","presenting","influence","audience","podcast","keynote","bühne","vortrag","vorträge","einfluss","reden","publikum","redner"]],
+    ["Writing & Storytelling",["writ","writing","writer","author","story","stories","storytelling","journal","journaling","blog","memoir","novel","schreib","schreiben","autor","geschichte","geschichten","tagebuch","roman"]],
+    ["Creativity & Art",["creat","creative","creativity","art","arts","artist","design","paint","painting","draw","drawing","craft","photo","photograph","foto","kreativ","kreativität","kunst","künstler","malen","zeichn","gestalt","basteln"]],
+    ["Music",["music","piano","guitar","sing","singing","concert","band","musik","klavier","gitarre","singen","konzert","gesang"]],
+    ["Nature & Outdoors",["nature","mountain","mountains","forest","sea","ocean","lake","outdoor","outdoors","sun","snow","natur","berg","berge","wald","meer","see","draussen","draußen","sonne","schnee"]],
+    ["Travel & Exploration",["travel","traveling","travelling","trip","explore","exploring","journey","abroad","countries","world","reise","reisen","entdeck","ausland","länder","welt","unterwegs"]],
+    ["Freedom & Independence",["freedom","free","independ","independence","independent","autonomy","flexib","flexibility","freiheit","frei","unabhäng","unabhängig","autonom","flexib"]],
+    ["Adventure & Challenge",["adventure","challenge","challenges","risk","thrill","bold","abenteuer","herausforder","risiko","mutig","wagnis"]],
+    ["Order & Structure",["organiz","organis","organized","structure","plan","planning","system","systems","routine","calendar","discipline","disciplined","order","tidy","ordnung","struktur","planen","planung","system","routine","kalender","disziplin","ordentlich"]],
+    ["Technology & Innovation",["tech","technology","ai","innovation","innovat","digital","software","app","apps","gadget","technik","technologie","ki","innovation","digital"]],
+    ["Animals & Pets",["dog","dogs","cat","cats","horse","horses","pet","pets","animal","animals","hund","hunde","katze","pferd","pferde","tier","tiere","haustier"]],
+    ["Fun & Play",["fun","play","playful","laugh","laughter","humor","humour","comedy","komödie","joy","spass","spaß","spiel","spielen","lachen","humor","freude","leicht"]],
+    ["Rest & Recovery",["rest","sleep","recover","recovery","relax","relaxation","holiday","vacation","pause","erhol","erholung","schlaf","schlafen","entspann","urlaub","ferien","pause"]],
+    ["Recognition & Status",["recogni","recognition","status","respect","reputation","acknowledg","prestige","fame","anerkenn","anerkennung","status","respekt","ruf","ansehen","prestige"]],
+    ["Authenticity & Truth",["authentic","authenticity","truth","honest","honesty","integrity","real","genuine","authentisch","wahrheit","ehrlich","ehrlichkeit","integrität","echt"]],
+    ["Culture & Arts Scene",["theatre","theater","museum","cinema","film","movies","culture","opera","exhibition","museum","kino","kultur","oper","ausstellung"]],
+    ["Languages & Cultures",["language","languages","china","chinese","mandarin","asia","asian","culture exchange","intercultural","sprache","sprachen","chines","asien","interkulturell"]],
+    ["Women's Empowerment",["women","woman","female","empower","empowerment","sisterhood","frauen","frau","weiblich","stärken"]],
+    ["Time & Simplicity",["time","slow","simplicity","simple","minimal","less","space","zeit","langsam","einfach","einfachheit","minimal","weniger","raum"]]];
+  var stop={};"the and my a an of to in for on at by from is are be am it its as not no yes very really more most much many some any all also just like than then there here etc with without who what where when why how which that this these those i me mine our your you we they them he she his her it's i'm e.g. eg und oder der die das ein eine einen einem einer des dem den zu im in am auf für von bei ist sind sein nicht kein keine ja auch nur sehr mehr meist viel viele alle wenn mit ohne mein meine meiner meinen mich mir ich unser dein deine wer was wo wann warum wie welche welcher dass dies über aus nach noch schon immer".split(" ").forEach(function(w){stop[w]=1;});
+
+  function tokens(str){return str.toLowerCase().replace(/[^\p{L}\p{N}\s'-]/gu," ").split(/\s+/).filter(function(w){return w.length>1&&!stop[w];});}
+  function matchStem(w,stem){return w===stem||(stem.length>=4&&w.indexOf(stem)===0);}
+  var customThemes=[], groups=[{name:"",members:[]},{name:"",members:[]},{name:"",members:[]},{name:"",members:[]}]; /* groups: [{name, members:[theme names]}] */
+  var clusters=[
+    ["Growth & Inner Work",["Self-Development","Learning & Knowledge","Psychology & Human Behaviour","Mindfulness & Presence","Spirituality","Purpose & Meaning","Authenticity & Truth"]],
+    ["Business & Wealth",["Entrepreneurship","Career & Achievement","Leadership","Wealth & Investing","Financial Security","Technology & Innovation","Order & Structure","Recognition & Status"]],
+    ["Impact & Contribution",["Coaching & Mentoring","Speaking & Influence","Helping & Service","Legacy & Impact","Women's Empowerment","Writing & Storytelling"]],
+    ["Body & Wellbeing",["Health & Vitality","Fitness & Sport","Nutrition & Food","Rest & Recovery","Inner Peace & Balance","Beauty & Style"]],
+    ["Love & Belonging",["Family","Children","Parents & Roots","Partnership & Love","Friendship","Community & Belonging","Deep Connection & Conversation","Animals & Pets"]],
+    ["Freedom & Experience",["Travel & Exploration","Freedom & Independence","Adventure & Challenge","Nature & Outdoors","Fun & Play","Time & Simplicity","Languages & Cultures"]],
+    ["Creativity & Culture",["Creativity & Art","Music","Culture & Arts Scene","Wine & Culinary Pleasure","Real Estate & Home"]]];
+  function analyse(answers){
+    var all=themes.concat(customThemes.map(function(c){return [c,[c.toLowerCase()]];}));
+    var hits={},words={},raw={},n=0;
+    answers.forEach(function(a,idx){
+      if(!a.trim())return;n++;
+      var lower=a.toLowerCase(),toks=tokens(a);
+      all.forEach(function(t){
+        var matched=[];
+        t[1].forEach(function(stem){
+          if(stem.indexOf(" ")>-1){if(lower.indexOf(stem)>-1)matched.push(stem);}
+          else toks.forEach(function(w){if(matchStem(w,stem))matched.push(w);});
+        });
+        if(matched.length){hits[t[0]]=hits[t[0]]||{};hits[t[0]][idx]=1;words[t[0]]=words[t[0]]||{};matched.forEach(function(m){words[t[0]][m]=1;});}
+      });
+      toks.forEach(function(w){var m=all.some(function(t){return t[1].some(function(s){return s.indexOf(" ")<0&&matchStem(w,s);});});if(!m&&w.length>2)raw[w]=(raw[w]||0)+1;});
+    });
+    function union(names){var idx={},ws={};names.forEach(function(nm){if(nm.indexOf("gap:")===0)return;if(hits[nm]){Object.keys(hits[nm]).forEach(function(i){idx[i]=1;});Object.keys(words[nm]).forEach(function(w){ws[w]=1;});}});return {n:Object.keys(idx).length,words:Object.keys(ws)};}
+    var rows=Object.keys(hits).map(function(k){return {name:k,n:Object.keys(hits[k]).length,words:Object.keys(words[k])};});
+    rows.sort(function(a,b){return b.n-a.n||a.name.localeCompare(b.name);});
+    var groupScores=groups.map(function(g){var u=union(g.members);return {name:g.name,n:u.n,words:u.words,members:g.members,gaps:g.members.filter(function(m){return m.indexOf("gap:")===0;}).map(function(m){return m.slice(4);}),drivers:g.members.filter(function(m){return m.indexOf("gap:")===0&&gapState[m]&&gapState[m].h==="hurts";}).length};});
+    var big=clusters.map(function(c){var u=union(c[1]);return {name:c[0],n:u.n,members:c[1].filter(function(m){return hits[m];})};}).filter(function(c){return c.n;}).sort(function(a,b){return b.n-a.n;});
+    var rawRanked=Object.keys(raw).filter(function(k){return raw[k]>=2&&k.length>=4&&!/^\d+$/.test(k);}).map(function(k){return [k,raw[k]];}).sort(function(a,b){return b[1]-a[1]||a[0].localeCompare(b[0]);}).slice(0,6);
+    return {ranked:rows,groups:groupScores,big:big,raw:rawRanked,n:n};
+  }
+
+  var form=document.getElementById("wb");
+  var fields=Array.prototype.slice.call(form.querySelectorAll("textarea,input[type=text]"));
+  var radios=Array.prototype.slice.call(form.querySelectorAll("input[type=radio]"));
+  var status=document.getElementById("status");
+  var KEY="flowmentum-priorities-v2";
+
+  var gapState={};
+  function renderGaps(){
+    var rows=[];
+    areas.forEach(function(a,i){var r=form.querySelector('input[name="r'+i+'"]:checked');var v=r?+r.value:null;document.getElementById("sc"+i).textContent=v?v+"/10":"–";
+      var low=v&&v<=5;document.getElementById("h"+i+"wrap").hidden=!low;
+      var h=form.querySelector('input[name="h'+i+'"]:checked');var hv=low&&h?h.value:null;
+      if(v)rows.push([a[0],v,(document.getElementById("m"+i).value||"").trim(),hv]);
+      if(v)gapState["gap:"+a[0]]={name:"gap:"+a[0],n:v,h:hv};});
+    var el=document.getElementById("gapRows");
+    if(!rows.length){el.innerHTML='<div class="empty">Rate the areas above and your ranking appears here.</div>';return;}
+    rows.sort(function(a,b){return a[1]-b[1];});
+    el.innerHTML=rows.map(function(r,i){var tag=r[3]==="hurts"?'<span class="tag drive">driver</span>':(r[3]==="fine"?'<span class="tag quiet">quiet</span>':'');return '<div class="row'+(i<3?' lead':'')+'"><span class="nm">'+r[0]+' '+tag+(r[2]?'<span class="words">'+r[2]+'</span>':'')+'</span><span class="tr"><i style="width:'+(r[1]*10)+'%"></i></span><span class="ct">'+r[1]+'/10</span></div>';}).join("");
+    var drivers=rows.filter(function(r){return r[3]==="hurts";}).length,quiet=rows.filter(function(r){return r[3]==="fine";}).length;
+    var note=document.getElementById("gapNote");
+    note.innerHTML=(drivers||quiet)?'<strong>'+drivers+'</strong> gap'+(drivers===1?'':'s')+' that hurt'+(drivers===1?'s':'')+' = real driver'+(drivers===1?'':'s')+' behind your priorities. <strong>'+quiet+'</strong> you don\'t mind = low on your list; no need to force '+(quiet===1?'it':'them')+', only to connect '+(quiet===1?'it':'them')+' to what you love.':'';
+  }
+  var lastTop=[], picked=null, lastRes=null;
+  var NQ=ten.length;
+  function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
+  function renderThemes(){
+    var answers=[];for(var i=1;i<=NQ;i++)answers.push(document.getElementById("t"+i).value);
+    var res=analyse(answers);lastRes=res;
+    var el=document.getElementById("themeRows");var chips=document.getElementById("rawChips");
+    var top=res.ranked.slice(0,10);
+    if(!top.length){el.innerHTML='<div class="empty">'+(res.n?'No theme recognised yet. Try more specific keywords.':'Answer a few questions and your themes appear here.')+'</div>';}
+    else el.innerHTML=top.map(function(r,i){return '<div class="row'+(i<3?' lead':'')+'"><span class="rk">'+(i+1)+'</span><span class="nm">'+esc(r.name)+'<span class="words">'+esc(r.words.join(", "))+'</span></span><span class="tr"><i style="width:'+Math.round(r.n*100/NQ)+'%"></i></span><span class="ct">'+r.n+'/'+NQ+'</span></div>';}).join("");
+    chips.innerHTML=res.raw.length?'<span class="hint" style="flex-basis:100%">Words you used more than once that didn\'t match a theme. Tap one to count it as its own theme:</span>'+res.raw.map(function(r){return '<button type="button" class="chip" data-w="'+esc(r[0])+'"><b>'+esc(r[0])+'</b>'+(r[1]>1?' ×'+r[1]:'')+' +</button>';}).join(""):"";
+    Array.prototype.forEach.call(chips.querySelectorAll(".chip"),function(b){b.addEventListener("click",function(){var w=b.getAttribute("data-w");var name=w.charAt(0).toUpperCase()+w.slice(1);if(customThemes.indexOf(name)<0)customThemes.push(name);save();renderThemes();});});
+    renderBoard(top,res);
+  }
+
+  /* ---------- grouping board: drag & drop (or tap, then tap) ---------- */
+  function renderBoard(top,res){
+    var board=document.getElementById("board");var pool=document.getElementById("pool");
+    var inGroup={};groups.forEach(function(g){g.members.forEach(function(m){inGroup[m]=1;});});
+    var rated=[];areas.forEach(function(a,i){var r=form.querySelector('input[name="r'+i+'"]:checked');if(!r)return;var h=form.querySelector('input[name="h'+i+'"]:checked');rated.push({name:"gap:"+a[0],n:+r.value,h:h?h.value:null});});
+    rated.sort(function(a,b){return a.n-b.n;});
+    var gapItems=rated.filter(function(g,i){return (i<3||g.h==="hurts")&&!inGroup[g.name];});
+    gapState={};rated.forEach(function(g){gapState[g.name]=g;});
+    var poolItems=top.filter(function(r){return !inGroup[r.name];});
+    document.getElementById("gapLegend").hidden=!gapItems.length&&!groups.some(function(g){return g.members.some(function(m){return m.indexOf("gap:")===0;});});
+    document.getElementById("boardPanel").hidden=!top.length;
+    pool.innerHTML=(poolItems.length||gapItems.length)?gapItems.map(function(r){return card(r.name,r.n,false);}).join("")+poolItems.map(function(r){return card(r.name,r.n,false);}).join(""):'<span class="empty">All themes are grouped. Drag one back here to remove it from a group.</span>';
+    var scoreMap={};res.groups.forEach(function(g,i){scoreMap[i]=g;});
+    board.innerHTML=groups.map(function(g,i){var sc=scoreMap[i]||{n:0};return '<div class="group'+(g.members.length?'':' blank')+'" data-g="'+i+'"><div class="ghead"><input type="text" class="gname" data-g="'+i+'" value="'+esc(g.name)+'" placeholder="Name this group" aria-label="Group '+(i+1)+' name"><span class="gscore">'+(g.members.length?sc.n+'/'+NQ:'')+'</span></div>'+(g.members.length?'<div class="gsuggest"><button type="button" class="btn ghost small sug" data-g="'+i+'">Suggest a name</button><div class="sugs" id="sugs'+i+'"></div></div>':'')+'<div class="gdrop" data-g="'+i+'">'+(g.members.length?g.members.map(function(m){if(m.indexOf("gap:")===0){var rr=form.querySelector('input[name="r'+areas.map(function(a){return a[0];}).indexOf(m.slice(4))+'"]:checked');return card(m,rr?+rr.value:0,true,i);}var r=res.ranked.filter(function(x){return x.name===m;})[0];return card(m,r?r.n:0,true,i);}).join(""):'<span class="dropHint">Drop themes here</span>')+'</div></div>';}).join("")+'<button type="button" class="addgroup" id="addGroup">+ Add a group</button>';
+    renderGroupRank(top,res);
+
+    /* wiring */
+    Array.prototype.forEach.call(document.querySelectorAll(".card"),function(c){
+      c.addEventListener("dragstart",function(e){e.dataTransfer.setData("text/plain",c.getAttribute("data-n"));e.dataTransfer.effectAllowed="move";c.classList.add("dragging");});
+      c.addEventListener("dragend",function(){c.classList.remove("dragging");});
+      c.addEventListener("click",function(e){if(e.target.classList.contains("rm")){moveTo(c.getAttribute("data-n"),null);return;}
+        var host=c.closest(".gdrop");
+        if(picked&&picked!==c.getAttribute("data-n")&&host){var pk=picked;picked=null;moveTo(pk,+host.getAttribute("data-g"));return;}
+        if(picked&&picked!==c.getAttribute("data-n")&&c.closest("#pool")){var pk2=picked;picked=null;moveTo(pk2,null);return;}
+        if(picked===c.getAttribute("data-n")){picked=null;}else{picked=c.getAttribute("data-n");}markPicked();});
+    });
+    function zone(z,gi){
+      z.addEventListener("dragover",function(e){e.preventDefault();z.classList.add("over");});
+      z.addEventListener("dragleave",function(){z.classList.remove("over");});
+      z.addEventListener("drop",function(e){e.preventDefault();z.classList.remove("over");var n=e.dataTransfer.getData("text/plain");if(n)moveTo(n,gi);});
+      z.addEventListener("click",function(e){if(picked&&!e.target.closest(".card")){var pk=picked;picked=null;moveTo(pk,gi);}});
+    }
+    Array.prototype.forEach.call(document.querySelectorAll(".gdrop"),function(z){zone(z,+z.getAttribute("data-g"));});
+    zone(pool,null);
+    Array.prototype.forEach.call(document.querySelectorAll(".gname"),function(inp){inp.addEventListener("input",function(e){e.stopPropagation();groups[+inp.getAttribute("data-g")].name=inp.value;if(lastRes)renderGroupRank(lastRes.ranked.slice(0,10),lastRes);clearTimeout(timer);timer=setTimeout(save,400);});});
+    document.getElementById("addGroup").addEventListener("click",function(){groups.push({name:"",members:[]});save();renderThemes();});
+    wireSuggest();markPicked();
+  }
+  function renderGroupRank(top,res){
+    var ranked=res.groups.map(function(g,i){return {i:i,n:g.n,gaps:g.gaps,drivers:g.drivers,name:groups[i].name||("Unnamed group "+(i+1)),m:groups[i].members.length};}).filter(function(g){return g.m;}).sort(function(a,b){return b.n-a.n||b.drivers-a.drivers;});
+    var gr=document.getElementById("groupRank");
+    gr.innerHTML=ranked.length?'<span class="hint">Your groups, ranked:</span>'+ranked.map(function(g,i){return '<div class="row'+(i<3?' lead':'')+'"><span class="rk">'+(i+1)+'</span><span class="nm"><span>'+esc(g.name)+(g.drivers?' <span class="tag drive">driven by a gap</span>':(g.gaps.length?' <span class="tag quiet">includes a quiet gap</span>':''))+'</span><span class="words">'+esc(groups[g.i].members.filter(function(m){return m.indexOf(":")<0||m.indexOf("gap:")===0&&false;}).join(" + "))+(g.gaps.length?' · gap: '+esc(g.gaps.join(", ")):'')+'</span></span><span class="tr"><i style="width:'+Math.round(g.n*100/NQ)+'%"></i></span><span class="ct">'+g.n+'/'+NQ+'</span></div>';}).join(""):"";
+    lastTop=ranked.filter(function(g){return groups[g.i].name.trim();}).slice(0,4).map(function(g){return groups[g.i].name.trim();});
+    fillPriorities();
+  }
+  function card(name,n,inGroup){
+    var gap=name.indexOf("gap:")===0;var label=gap?name.slice(4):name;var st=gap?(gapState[name]||{}):{};var kind=st.h==="hurts"?"hurts":(st.h==="fine"?"quiet":"");
+    var title=gap?('Gap from 2.2 – scored '+n+'/10'+(kind==="hurts"?' · it hurts: a real driver':kind==="quiet"?' · you don\'t mind: low on your list – promote it only if it serves what you love':' · say in 2.2 whether it hurts')):'';
+    return '<span class="card'+(gap?' gapcard '+kind:'')+'" draggable="true" data-n="'+esc(name)+'" role="button" tabindex="0" title="'+esc(title)+'">'+(gap?'<span class="gapmark">'+(kind==="hurts"?'gap · hurts':kind==="quiet"?'gap · quiet':'gap')+'</span>':'')+esc(label)+' <b>'+(gap?n+'/10':n)+'</b>'+(inGroup?'<span class="rm" title="Remove from group">×</span>':'')+'</span>';}
+  function markPicked(){Array.prototype.forEach.call(document.querySelectorAll(".card"),function(c){c.classList.toggle("picked",c.getAttribute("data-n")===picked);});document.getElementById("pickHint").hidden=!picked;}
+  function moveTo(name,gi){groups.forEach(function(g){g.members=g.members.filter(function(m){return m!==name;});});if(gi!==null&&groups[gi]&&groups[gi].members.indexOf(name)<0)groups[gi].members.push(name);save();renderThemes();}
+  /* ---------- priorities: auto-filled from group names (unless typed by hand), reorderable ---------- */
+  var manualV={};
+  function fillPriorities(){
+    ["v1","v2","v3","v4"].forEach(function(id,i){var f=document.getElementById(id);if(manualV[id])return;var want=lastTop[i]||"";if(f.value!==want){f.value=want;}});
+    progress();
+  }
+  ["v1","v2","v3","v4"].forEach(function(id){document.getElementById(id).addEventListener("input",function(e){manualV[id]=!!e.target.value.trim()&&lastTop.indexOf(e.target.value.trim())<0;});});
+  Array.prototype.forEach.call(document.querySelectorAll(".mv"),function(b){b.addEventListener("click",function(){
+    var i=+b.getAttribute("data-v"),d=+b.getAttribute("data-d"),j=i+d;if(j<1||j>4)return;
+    var A=document.getElementById("v"+i),B=document.getElementById("v"+j);var t=A.value;A.value=B.value;B.value=t;
+    manualV["v"+i]=true;manualV["v"+j]=true;save();progress();});});
+
+  /* ---------- group name suggestions: built from the themes inside the group ---------- */
+  var phrase={"Entrepreneurship":["build my business","grow my business"],"Career & Achievement":["achieve what I set out to do","succeed in my career"],"Leadership":["lead with confidence","lead others"],"Wealth & Investing":["create wealth","get well paid"],"Financial Security":["feel financially safe","build security"],"Real Estate & Home":["create a beautiful home","build my home base"],"Self-Development":["keep growing","become my best self"],"Learning & Knowledge":["keep learning","learn every day"],"Psychology & Human Behaviour":["understand people","understand how we work"],"Spirituality":["live connected to something bigger","nurture my soul"],"Purpose & Meaning":["live with purpose","do meaningful work"],"Inner Peace & Balance":["live in balance","stay calm and centred"],"Mindfulness & Presence":["be fully present","live mindfully"],"Health & Vitality":["stay healthy and full of energy","feel vital"],"Fitness & Sport":["stay fit and strong","move my body"],"Nutrition & Food":["eat well","enjoy good food"],"Wine & Culinary Pleasure":["enjoy wine and good food","savour life"],"Beauty & Style":["look and feel fabulous","feel beautiful"],"Family":["be there for my family","spend quality time with family"],"Children":["be there for my children","raise happy children"],"Parents & Roots":["honour my parents","stay close to my roots"],"Partnership & Love":["love and be loved","nurture my relationship"],"Friendship":["keep my friendships alive","be a great friend"],"Community & Belonging":["belong to my tribe","build community"],"Deep Connection & Conversation":["connect deeply with people","have real conversations"],"Helping & Service":["help others","be of service"],"Coaching & Mentoring":["coach and mentor others","share wisdom"],"Legacy & Impact":["leave a legacy","make an impact"],"Speaking & Influence":["speak and inspire","share my voice"],"Writing & Storytelling":["write and tell stories","write my book"],"Creativity & Art":["create","express myself creatively"],"Music":["make music","live with music"],"Nature & Outdoors":["live close to nature","be outdoors"],"Travel & Exploration":["explore the world","travel"],"Freedom & Independence":["live free and independent","own my time"],"Adventure & Challenge":["seek adventure","challenge myself"],"Order & Structure":["live with structure","keep my life in order"],"Technology & Innovation":["innovate","build with technology"],"Animals & Pets":["care for my animals","live with animals"],"Fun & Play":["have fun","play and laugh"],"Rest & Recovery":["rest and recharge","recover well"],"Recognition & Status":["be recognised for my work","be seen"],"Authenticity & Truth":["live true to myself","be authentic"],"Culture & Arts Scene":["enjoy culture","feed my mind with art"],"Languages & Cultures":["live between cultures","connect across cultures"],"Women's Empowerment":["empower women","lift other women"],"Time & Simplicity":["keep life simple","own my time"]};
+  var gapTail={"Wealth":" and get highly paid for it","Work":" through my work","Community":" with my tribe","Body":" and feel fabulous","Family":" with my family","Mind":" with a clear mind","Purpose":" with purpose","Legacy":" and leave a legacy"};
+  function cap(t){return t.charAt(0).toUpperCase()+t.slice(1);}
+  function suggestNames(members){
+    var th=members.filter(function(m){return m.indexOf(":")<0;});var gaps=members.filter(function(m){return m.indexOf("gap:")===0;}).map(function(m){return m.slice(4);});
+    var ph=[];th.forEach(function(t){(phrase[t]||[t.toLowerCase()]).forEach(function(p){if(ph.indexOf(p)<0)ph.push(p);});});
+    var out=[];
+    if(ph.length)out.push(cap(ph[0]));
+    if(ph.length>=2)out.push(cap(ph[0])+" and "+ph[1]);
+    if(ph.length>=3)out.push(cap(ph[0])+" and "+ph[2]);
+    if(ph.length>=3)out.push(cap(ph[1])+", "+ph[2]+" and "+ph[0]);
+    if(gaps.length&&ph.length)out.push(cap(ph[0])+(gapTail[gaps[0]]||""));
+    th.slice(0,2).forEach(function(t){out.push(t);});
+    return out.filter(function(x,i,a){return x&&a.indexOf(x)===i;}).slice(0,6);
+  }
+  function wireSuggest(){
+    Array.prototype.forEach.call(document.querySelectorAll(".sug"),function(b){b.addEventListener("click",function(){
+      var gi=+b.getAttribute("data-g");var box=document.getElementById("sugs"+gi);var list=suggestNames(groups[gi].members);
+      box.innerHTML=list.map(function(n){return '<button type="button" class="chip pick" data-n="'+esc(n)+'">'+esc(n)+'</button>';}).join("")+'<button type="button" class="chip own">I\'ll write my own</button>';
+      Array.prototype.forEach.call(box.querySelectorAll(".pick"),function(c){c.addEventListener("click",function(){var inp=document.querySelector('.gname[data-g="'+gi+'"]');inp.value=c.getAttribute("data-n");groups[gi].name=inp.value;box.innerHTML="";save();if(lastRes)renderGroupRank(lastRes.ranked.slice(0,10),lastRes);});});
+      box.querySelector(".own").addEventListener("click",function(){box.innerHTML="";document.querySelector('.gname[data-g="'+gi+'"]').focus();});
+    });});
+  }
+  function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||"{}");fields.forEach(function(f){if(d[f.name])f.value=d[f.name];});radios.forEach(function(r){if(d[r.name]===r.value)r.checked=true;});if(Array.isArray(d.__custom))customThemes=d.__custom;if(Array.isArray(d.__groups))groups=d.__groups;if(d.__manualV)manualV=d.__manualV;}catch(e){}}
+  function save(){var d={};fields.forEach(function(f){if(f.value.trim())d[f.name]=f.value;});radios.forEach(function(r){if(r.checked)d[r.name]=r.value;});d.__custom=customThemes;d.__groups=groups;d.__manualV=manualV;try{localStorage.setItem(KEY,JSON.stringify(d));}catch(e){}}
+  var areaCount=areas.length;
+  function progress(){var n=fields.filter(function(f){return f.value.trim()&&!/^m\d$/.test(f.name);}).length;var g=0;for(var i=0;i<areaCount;i++)if(form.querySelector('input[name="r'+i+'"]:checked'))g++;var tot=fields.filter(function(f){return !/^m\d$/.test(f.name);}).length+areaCount;var p=Math.round((n+g)/tot*100);document.getElementById("pct").textContent=p+" % completed";document.getElementById("barfill").style.width=p+"%";}
+  function grow(t){if(!t||t.tagName!=="TEXTAREA")return;t.style.height="auto";t.style.height=(t.scrollHeight+2)+"px";}
+
+  load();fields.forEach(grow);progress();renderGaps();renderThemes();
+  var timer;
+  function onchange(e){grow(e.target);progress();if(/^r\d|^m\d|^h\d/.test(e.target.name)){renderGaps();if(lastRes)renderThemes();}if(/^t\d+$/.test(e.target.name))renderThemes();clearTimeout(timer);timer=setTimeout(function(){save();status.textContent="Saved";setTimeout(function(){status.textContent="";},1500);},400);}
+  form.addEventListener("input",onchange);form.addEventListener("change",function(e){if(e.target.type==="radio")onchange(e);});
+  form.addEventListener("submit",function(e){e.preventDefault();});
+
+  function labelOf(f){var l=form.querySelector('label[for="'+f.id+'"]');return l?l.textContent:(f.getAttribute("aria-label")||f.name);}
+  document.getElementById("copy").addEventListener("click",function(){
+    var out="LIVE YOUR PRIORITIES — FLOWmentum™ Workbook, Chapter 2\n";
+    var cur=null;
+    fields.forEach(function(f){var sec=f.closest("section");var h=sec.querySelector("h2").textContent;if(h!==cur){cur=h;out+="\n== "+h.toUpperCase()+" ==\n";if(sec.id==="s22"){areas.forEach(function(a,i){var r=form.querySelector('input[name="r'+i+'"]:checked');out+="\n"+a[0]+": "+(r?r.value+"/10":"–")+(document.getElementById("m"+i).value.trim()?" — missing: "+document.getElementById("m"+i).value.trim():"");});out+="\n";}}
+      if(/^m\d$/.test(f.name))return;out+="\n"+labelOf(f)+"\n"+(f.value.trim()||"—")+"\n";
+      if(f.name==="t"+NQ&&lastTop.length){out+="\nEMERGING PATTERN: "+document.getElementById("themeRows").innerText.replace(/\n+/g," · ")+"\n";}
+    });
+    function done(){status.textContent="Copied to clipboard";setTimeout(function(){status.textContent="";},2000);}
+    function fallback(txt){var ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done();}catch(e){status.textContent="Select the text and copy it manually";}document.body.removeChild(ta);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(out).then(done,function(){fallback(out);});}else fallback(out);
+  });
+
+
+  /* ---------- PDF report (jsPDF + downloads capability) ---------- */
+  var BFLY_URI=document.getElementById("bflyImg"), WORD_URI=document.querySelector(".logo img"); /* same-origin <img> elements, handed to jsPDF.addImage */
+  /* ---------- optional AI help with wording (claude.ai "sample" capability; hidden where unavailable) ---------- */
+  var sampleNS=null;
+  var aiFields=["q21b","q22sum","q24notes"];
+  function wireAI(){
+    aiFields.forEach(function(id){var f=document.getElementById(id);if(!f)return;
+      var row=document.createElement("div");row.className="airow";row.innerHTML='<button type="button" class="btn ghost small ai" data-f="'+id+'">✦ Help me find the words</button><span class="status aist"></span>';
+      (f.closest(".q")||f.parentNode).appendChild(row);
+      row.querySelector(".ai").addEventListener("click",function(){askAI(f,row);});});
+  }
+  function askAI(f,row){
+    var st=row.querySelector(".aist");var txt=f.value.trim();
+    if(!txt){st.textContent="Write a few words first, even rough ones. I'll keep your voice.";setTimeout(function(){st.textContent="";},3000);return;}
+    var label=(form.querySelector('label[for="'+f.id+'"]')||{}).textContent||f.getAttribute("aria-label")||"";
+    st.textContent="Thinking…";
+    var prompt="You help a person put a personal reflection into words. Keep THEIR voice: reuse their own words and phrases wherever possible, keep the same language (English or German), the same tone and roughly the same length (at most 1.5x). Do not add new facts, opinions or advice. Only make it clearer and more fluent. Return ONLY the improved text, no quotes, no preamble.\n\nQuestion: "+label+"\nTheir draft: "+txt;
+    sampleNS(prompt,{modelTier:"quick"}).then(function(r){var out=(r.text||"").trim();if(!out){st.textContent="No suggestion came back.";return;}
+      var old=row.querySelector(".aibox");if(old)old.remove();
+      var box=document.createElement("div");box.className="aibox";box.innerHTML='<div class="aitext"></div><div class="actions" style="margin-top:8px"><button type="button" class="btn small use">Use this</button><button type="button" class="btn ghost small keep">Keep mine</button></div>';
+      box.querySelector(".aitext").textContent=out;row.appendChild(box);st.textContent="";
+      box.querySelector(".use").addEventListener("click",function(){f.value=out;f.dispatchEvent(new Event("input",{bubbles:true}));box.remove();});
+      box.querySelector(".keep").addEventListener("click",function(){box.remove();});
+    },function(err){st.textContent=err&&err.code==="not_granted"?"AI help isn't available here.":err&&err.code==="rate_limited"?"Too many requests, try again in a minute.":"Couldn't get a suggestion.";setTimeout(function(){st.textContent="";},4000);});
+  }
+  Promise.resolve(window.FLOW_AI||null) /* see README: optional AI help */.then(function(ns){if(ns){sampleNS=ns;wireAI();}}).catch(function(){});
+
+  /* downloads: a normal browser download (Blob + <a download>) */
+  var dlNS={save:function(r){return new Promise(function(res){var u=URL.createObjectURL(r.data);var a=document.createElement("a");a.href=u;a.download=r.filename;document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(u);},1500);res({status:"saved"});});}};
+
+  function val(id){var e=document.getElementById(id);return e?(e.value||"").trim():"";}
+  function buildPdf(){
+    var J=window.jspdf&&window.jspdf.jsPDF;if(!J)throw new Error("pdf library not loaded");
+    var doc=new J({unit:"pt",format:"a4"});var W=595.28,H=841.89,LM=56,RM=56,CW=W-LM-RM;
+    var NAVY=[5,14,26],NAVY2=[15,45,82],BLUE=[109,165,208],GOLD=[201,162,93],GOLDD=[169,132,63],TXT=[11,26,46],MUTED=[79,99,120],LINE=[211,222,234],BG=[245,248,252],SOFT=[231,240,250];
+    var y=0,page=1;
+    function rgb(c){return c[0]+","+c[1]+","+c[2];}
+    function frame(){doc.setFillColor.apply(doc,BG);doc.rect(0,0,W,H,"F");doc.setFillColor.apply(doc,NAVY);doc.rect(0,0,W,30,"F");try{doc.addImage(WORD_URI,"PNG",LM,9,112,12);}catch(e){}
+      doc.setFont("helvetica","normal");doc.setFontSize(7);doc.setTextColor.apply(doc,BLUE);doc.text("LIVE YOUR PRIORITIES  ·  MY REPORT",W-RM,19,{align:"right"});
+      doc.setTextColor.apply(doc,MUTED);doc.setFontSize(8);doc.text(String(page),LM,H-26);doc.text("claudiamasueger.com",W-RM,H-26,{align:"right"});y=66;}
+    function newPage(){doc.addPage();page++;frame();}
+    function need(h){if(y+h>H-56)newPage();}
+    function eyebrow(t){need(20);doc.setFont("helvetica","bold");doc.setFontSize(7.5);doc.setTextColor.apply(doc,GOLD);doc.text(t.toUpperCase().split("").join(" "),LM,y);y+=16;}
+    function heading(t,size){size=size||18;var lines=doc.setFont("times","normal").setFontSize(size).splitTextToSize(t,CW);need(lines.length*size*1.2+18+size*0.6);y+=size*0.6;doc.setTextColor.apply(doc,NAVY2);doc.text(lines,LM,y);y+=lines.length*size*1.2;doc.setDrawColor.apply(doc,GOLD);doc.setLineWidth(1);doc.line(LM,y,LM+40,y);y+=16;}
+    function para(t,size,color,gap,font){size=size||10;font=font||"normal";var lines=doc.setFont("helvetica",font).setFontSize(size).splitTextToSize(t,CW);need(lines.length*size*1.45+(gap||8));doc.setTextColor.apply(doc,color||TXT);doc.text(lines,LM,y);y+=lines.length*size*1.45+(gap||8);}
+    function label(t){para(t,8.5,MUTED,3);}
+    function answer(t){if(!t){para("—",10,MUTED,10);return;}para(t,10.5,TXT,12);}
+    function bar(name,sub,n,of,lead,tagText,tagColor){var h=sub?30:20;need(h+6);
+      doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor.apply(doc,TXT);doc.text(name,LM,y+9);
+      if(tagText){var tw=doc.getTextWidth(name);doc.setFontSize(6.5);doc.setTextColor.apply(doc,tagColor||GOLDD);doc.text(tagText.toUpperCase(),LM+tw+6,y+9);}
+      if(sub){doc.setFont("helvetica","normal");doc.setFontSize(8);doc.setTextColor.apply(doc,MUTED);doc.text(doc.splitTextToSize(sub,CW*0.5)[0],LM,y+21);}
+      var bx=LM+CW*0.52,bw=CW*0.38;doc.setFillColor(lead?236:222,lead?232:232,lead?216:242);doc.setFillColor.apply(doc,lead?[236,229,212]:[214,228,241]);doc.roundedRect(bx,y+2,bw,7,3.5,3.5,"F");
+      doc.setFillColor.apply(doc,lead?GOLD:BLUE);if(n>0)doc.roundedRect(bx,y+2,Math.max(7,bw*n/of),7,3.5,3.5,"F");
+      doc.setFont("helvetica",lead?"bold":"normal");doc.setFontSize(9);doc.setTextColor.apply(doc,lead?GOLDD:MUTED);doc.text(n+"/"+of,W-RM,y+9,{align:"right"});y+=h;}
+    function box(t,size){var lines=doc.setFont("helvetica","normal").setFontSize(size||10).splitTextToSize(t,CW-28);var h=lines.length*(size||10)*1.45+22;need(h+8);doc.setFillColor.apply(doc,SOFT);doc.roundedRect(LM,y,CW,h,6,6,"F");doc.setTextColor.apply(doc,TXT);doc.text(lines,LM+14,y+16);y+=h+12;}
+
+    /* ---- gather data ---- */
+    var pri=[val("v1"),val("v2"),val("v3"),val("v4")];
+    var answers=[];for(var i=1;i<=NQ;i++)answers.push(val("t"+i));
+    var res=analyse(answers);
+    var gaps=[];areas.forEach(function(a,i){var r=form.querySelector('input[name="r'+i+'"]:checked');if(!r)return;var h=form.querySelector('input[name="h'+i+'"]:checked');gaps.push({name:a[0],sub:a[1],n:+r.value,h:h?h.value:null,miss:val("m"+i)});});
+    gaps.sort(function(a,b){return a.n-b.n;});
+    var grp=res.groups.map(function(g,i){return {name:groups[i].name||("Unnamed group "+(i+1)),n:g.n,drivers:g.drivers,members:groups[i].members};}).filter(function(g){return g.members.length;}).sort(function(a,b){return b.n-a.n||b.drivers-a.drivers;});
+    var today=new Date().toLocaleDateString("de-CH");
+
+    /* ---- cover ---- */
+    doc.setFillColor.apply(doc,NAVY);doc.rect(0,0,W,H,"F");
+    doc.setFillColor(10,29,54);doc.rect(0,H*0.62,W,H*0.38,"F");
+    try{doc.addImage(BFLY_URI,"PNG",W/2-110,110,220,132);}catch(e){}
+    try{doc.addImage(WORD_URI,"PNG",W/2-84,262,168,18);}catch(e){}
+    doc.setFont("helvetica","bold");doc.setFontSize(8);doc.setTextColor.apply(doc,GOLD);doc.text("M Y   P R I O R I T I E S   R E P O R T",LM,380);
+    doc.setFont("times","normal");doc.setFontSize(44);doc.setTextColor.apply(doc,BLUE);doc.text("Live Your",LM,432);
+    doc.setFont("times","italic");doc.setTextColor(255,255,255);doc.text("Priorities.",LM,484);
+    doc.setFont("helvetica","normal");doc.setFontSize(11);doc.setTextColor(201,215,230);doc.text("Created on "+today,LM,520);
+    doc.setFontSize(9);doc.setTextColor.apply(doc,BLUE);doc.text("FLOWmentum™ Workbook · Chapter 2 · Claudia Masüger · claudiamasueger.com",LM,H-60);
+
+    /* ---- page: priorities ---- */
+    newPage();
+    var filled=pri.filter(function(p){return p;});
+    eyebrow("My "+(filled.length===3?"three ":filled.length===4?"four ":"")+"highest priorities");heading("What my life is about right now.",22);
+    if(!filled.length)para("Not declared yet. Go back to exercise 2.4 and name them in your own words.",10,MUTED,14);
+    pri.forEach(function(p,i){if(!p)return;need(44);doc.setFillColor(255,255,255);doc.setDrawColor.apply(doc,LINE);doc.roundedRect(LM,y,CW,38,6,6,"FD");doc.setFillColor.apply(doc,GOLD);doc.rect(LM,y+6,3,26,"F");
+      doc.setFont("times","normal");doc.setFontSize(16);doc.setTextColor.apply(doc,GOLD);doc.text(String(i+1),LM+16,y+25);
+      doc.setFont("times","normal");doc.setFontSize(14);doc.setTextColor.apply(doc,NAVY2);doc.text(doc.splitTextToSize(p,CW-70)[0],LM+40,y+24);y+=46;});
+    y+=6;
+    if(val("q21a")||val("q21b")){eyebrow("Where I started");if(val("q21a")){label("Who I'm stepping up for");answer(val("q21a"));}if(val("q21b")){label("What I want to change, and why");answer(val("q21b"));}}
+    para("Redo this exercise every 4 to 6 months. Transformation brings clarity, and with it your priorities may shift too.",9,MUTED,0,"italic");
+
+    /* ---- page: gaps ---- */
+    newPage();
+    eyebrow("Exercise 2.2 · Where my missing pieces are");heading("My eight areas of life, as they feel today.");
+    if(!gaps.length)para("No ratings yet.",10,MUTED);
+    gaps.forEach(function(g,i){bar(g.name,g.sub+(g.miss?"  ·  missing: "+g.miss:""),g.n,10,i<3,g.h==="hurts"?"driver":(g.h==="fine"?"quiet":""),g.h==="hurts"?GOLDD:MUTED);});
+    y+=6;var dr=gaps.filter(function(g){return g.h==="hurts";}),qt=gaps.filter(function(g){return g.h==="fine";});
+    if(dr.length||qt.length)box((dr.length?dr.length+" gap"+(dr.length>1?"s":"")+" that hurt"+(dr.length>1?"":"s")+" ("+dr.map(function(g){return g.name;}).join(", ")+") = real drivers behind my priorities. ":"")+(qt.length?qt.length+" I don't mind ("+qt.map(function(g){return g.name;}).join(", ")+") = low on my list; nothing to force, only to connect to what I love.":""),10);
+    if(val("q22sum")){label("What my lowest areas have in common");answer(val("q22sum"));}
+
+    /* ---- pattern ---- */
+    newPage();eyebrow("Exercise 2.3 · What I actually value and prioritize");heading("My pattern: what my life already shows.");
+    var top=res.ranked.slice(0,10);
+    if(!top.length)para("No answers yet.",10,MUTED);
+    top.forEach(function(r,i){bar((i+1)+".  "+r.name,r.words.join(", "),r.n,NQ,i<3);});
+    if(grp.length){y+=10;eyebrow("My groups");
+      grp.forEach(function(g,i){var themes=g.members.filter(function(m){return m.indexOf(":")<0;});var gg=g.members.filter(function(m){return m.indexOf("gap:")===0;}).map(function(m){return m.slice(4);});
+        var sub=themes.join(" + ")+(gg.length?"  ·  gap: "+gg.join(", "):"");
+        bar(g.name,sub,g.n,NQ,i<4,g.drivers?"driven by a gap":"",GOLDD);});}
+    if(val("q24notes")){y+=6;label("Themes · Patterns · Notes");answer(val("q24notes"));}
+
+    /* ---- appendix: the answers ---- */
+    if(answers.some(function(a){return a;})){newPage();eyebrow("Appendix · My nine answers");heading("The raw material.",16);
+      ten.forEach(function(q,i){if(!answers[i])return;need(40);doc.setFont("times","normal");doc.setFontSize(10);doc.setTextColor.apply(doc,GOLD);doc.text((i+1<10?"0":"")+(i+1),LM,y+1);
+        var ql=doc.setFont("helvetica","normal").setFontSize(9).splitTextToSize(q[0],CW-30);doc.setTextColor.apply(doc,MUTED);doc.text(ql,LM+28,y);y+=ql.length*12;
+        var al=doc.setFont("helvetica","bold").setFontSize(10.5).splitTextToSize(answers[i],CW-30);doc.setTextColor.apply(doc,TXT);doc.text(al,LM+28,y+3);y+=al.length*14+12;});}
+
+    /* ---- closing ---- */
+    need(120);y+=10;doc.setFillColor.apply(doc,NAVY);doc.roundedRect(LM,y,CW,96,8,8,"F");
+    doc.setFont("times","italic");doc.setFontSize(12);doc.setTextColor(201,215,230);doc.text(doc.splitTextToSize("When you live by your highest priorities, you stop pushing and start flowing. Decisions get lighter, energy returns, and the next chapter writes itself.",CW-40),LM+20,y+28);
+    doc.setFont("helvetica","bold");doc.setFontSize(7.5);doc.setTextColor.apply(doc,GOLD);doc.text("F L O W M E N T U M ™   ·   C L A U D I A   M A S Ü G E R",LM+20,y+82);
+    return doc;
+  }
+  document.getElementById("makePdf").addEventListener("click",function(){
+    var st=status;st.textContent="Building your report…";
+    try{var doc=buildPdf();var blob=doc.output("blob");var name="FLOWmentum_My_Priorities_"+new Date().toISOString().slice(0,10)+".pdf";
+      dlNS.save({filename:name,data:blob}).then(function(){st.textContent="Saved. Open the PDF from your downloads.";setTimeout(function(){st.textContent="";},4000);},function(err){st.textContent=err&&err.code==="declined"?"Download cancelled.":"Couldn't save the file ("+(err&&err.code||"error")+").";setTimeout(function(){st.textContent="";},4000);});
+    }catch(e){st.textContent="Couldn't build the PDF: "+e.message;}
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll("#sumPrompts .chip"),function(b){b.addEventListener("click",function(){var f=document.getElementById("q22sum");f.value=f.value.trim()?f.value.trim().replace(/\.?$/,"")+". "+b.textContent:b.textContent;f.dispatchEvent(new Event("input",{bubbles:true}));f.focus();});});
+  var wrap=document.getElementById("resetwrap");
+  function askReset(){
+    wrap.innerHTML='<span class="status">Clear everything? </span><button type="button" class="btn ghost small" id="yes">Yes, clear</button> <button type="button" class="btn ghost small" id="no">Keep</button>';
+    document.getElementById("yes").onclick=function(){fields.forEach(function(f){f.value="";grow(f);});radios.forEach(function(r){r.checked=false;});customThemes=[];groups=[{name:"",members:[]},{name:"",members:[]},{name:"",members:[]},{name:"",members:[]}];picked=null;manualV={};lastTop=[];try{localStorage.removeItem(KEY);}catch(e){}progress();renderGaps();renderThemes();restore();status.textContent="Cleared";setTimeout(function(){status.textContent="";},1500);};
+    document.getElementById("no").onclick=restore;
+  }
+  function restore(){wrap.innerHTML='<button type="button" class="btn ghost" id="reset">Clear all answers</button>';document.getElementById("reset").addEventListener("click",askReset);}
+  document.getElementById("reset").addEventListener("click",askReset);
+})();
+</script>
+
+</body>
+</html>
