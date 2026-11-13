@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Live Your Priorities · FLOWmentum™</title>
-<meta name="description" content="FLOWmentum™ workbook, chapter 2: find your three or four highest priorities in about 25 minutes. Answers stay on your device.">
-<meta property="og:title" content="Live Your Priorities · FLOWmentum™">
-<meta property="og:description" content="Rate your 8 areas of life, discover what you actually prioritize, group it, and declare your top priorities. Free, 25 minutes, nothing leaves your device.">
+<title>Your Real Priorities · FLOWmentum™</title>
+<meta name="description" content="FLOWmentum™ workbook: not what you think you should care about, what your life already shows. Find your real priorities in about 25 minutes. Answers stay on your device.">
+<meta property="og:title" content="Your Real Priorities · FLOWmentum™">
+<meta property="og:description" content="Not what you think you should care about. What your life already shows. Free, 25 minutes, nothing leaves your device.">
 <meta property="og:image" content="https://flowmentum.world/priorities/assets/og-image.png">
 <link rel="icon" href="/priorities/assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +44,7 @@ p{margin:0 0 1em}
 .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.15;color:var(--blue);margin:14px 0 18px}
 .hero h1 em{font-style:italic;color:#fff}
 .hero p{max-width:30em;color:#C9D7E6;font-weight:300;font-size:1.05rem}
+.hero p.sub{font-family:var(--display);font-style:italic;color:#fff;font-size:1.15rem;margin-bottom:14px}
 .hero .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:.8rem;color:var(--blue);letter-spacing:.06em}
 .butterfly{position:absolute;right:0;top:34px;width:min(36vw,260px);height:auto;pointer-events:none}
 @media (max-width:640px){.butterfly{width:150px;top:auto;bottom:-6px;opacity:.45}}
@@ -241,9 +242,10 @@ footer a{color:var(--blue);text-decoration:none}
 <div class="hero">
   <div class="band-inner">
     <div class="eyebrow">FLOWmentum™ Workbook · Chapter 2</div>
-    <h1>Live Your <em>Priorities.</em></h1>
-    <p>When your priorities are clear, decisions get easier and your energy comes back. In the next 25 minutes you'll find your top 3 or 4.</p>
-    <div class="meta"><span>≈ 25 minutes</span><span>5 short exercises</span><span>Answers stay on this device</span></div>
+    <h1>Your Real <em>Priorities.</em></h1>
+    <p class="sub">Not what you think you should care about. What your life already shows.</p>
+    <p>When your real priorities are clear, decisions get easier and your energy comes back. In the next 25 minutes you'll find your top 3 or 4.</p>
+    <div class="meta"><span>≈ 25 minutes</span><span>4 short exercises</span><span>Answers stay on this device</span></div>
     <img class="butterfly" id="bflyImg" src="/priorities/assets/butterfly.png" alt="" width="720" height="431">
   </div>
 </div>
@@ -604,7 +606,7 @@ footer a{color:var(--blue);text-decoration:none}
 
   function labelOf(f){var l=form.querySelector('label[for="'+f.id+'"]');return l?l.textContent:(f.getAttribute("aria-label")||f.name);}
   document.getElementById("copy").addEventListener("click",function(){
-    var out="LIVE YOUR PRIORITIES — FLOWmentum™ Workbook, Chapter 2\n";
+    var out="YOUR REAL PRIORITIES — FLOWmentum™ Workbook, Chapter 2\n";
     var cur=null;
     fields.forEach(function(f){var sec=f.closest("section");var h=sec.querySelector("h2").textContent;if(h!==cur){cur=h;out+="\n== "+h.toUpperCase()+" ==\n";if(sec.id==="s22"){areas.forEach(function(a,i){var r=form.querySelector('input[name="r'+i+'"]:checked');out+="\n"+a[0]+": "+(r?r.value+"/10":"–")+(document.getElementById("m"+i).value.trim()?" — missing: "+document.getElementById("m"+i).value.trim():"");});out+="\n";}}
       if(/^m\d$/.test(f.name))return;out+="\n"+labelOf(f)+"\n"+(f.value.trim()||"—")+"\n";
@@ -654,7 +656,7 @@ footer a{color:var(--blue);text-decoration:none}
     var y=0,page=1;
     function rgb(c){return c[0]+","+c[1]+","+c[2];}
     function frame(){doc.setFillColor.apply(doc,BG);doc.rect(0,0,W,H,"F");doc.setFillColor.apply(doc,NAVY);doc.rect(0,0,W,30,"F");try{doc.addImage(WORD_URI,"PNG",LM,9,112,12);}catch(e){}
-      doc.setFont("helvetica","normal");doc.setFontSize(7);doc.setTextColor.apply(doc,BLUE);doc.text("LIVE YOUR PRIORITIES  ·  MY REPORT",W-RM,19,{align:"right"});
+      doc.setFont("helvetica","normal");doc.setFontSize(7);doc.setTextColor.apply(doc,BLUE);doc.text("YOUR REAL PRIORITIES  ·  MY REPORT",W-RM,19,{align:"right"});
       doc.setTextColor.apply(doc,MUTED);doc.setFontSize(8);doc.text(String(page),LM,H-26);doc.text("claudiamasueger.com",W-RM,H-26,{align:"right"});y=66;}
     function newPage(){doc.addPage();page++;frame();}
     function need(h){if(y+h>H-56)newPage();}
@@ -686,10 +688,11 @@ footer a{color:var(--blue);text-decoration:none}
     doc.setFillColor(10,29,54);doc.rect(0,H*0.62,W,H*0.38,"F");
     try{doc.addImage(BFLY_URI,"PNG",W/2-110,110,220,132);}catch(e){}
     try{doc.addImage(WORD_URI,"PNG",W/2-84,262,168,18);}catch(e){}
-    doc.setFont("helvetica","bold");doc.setFontSize(8);doc.setTextColor.apply(doc,GOLD);doc.text("M Y   P R I O R I T I E S   R E P O R T",LM,380);
-    doc.setFont("times","normal");doc.setFontSize(44);doc.setTextColor.apply(doc,BLUE);doc.text("Live Your",LM,432);
+    doc.setFont("helvetica","bold");doc.setFontSize(8);doc.setTextColor.apply(doc,GOLD);doc.text("M Y   R E P O R T",LM,380);
+    doc.setFont("times","normal");doc.setFontSize(44);doc.setTextColor.apply(doc,BLUE);doc.text("Your Real",LM,432);
     doc.setFont("times","italic");doc.setTextColor(255,255,255);doc.text("Priorities.",LM,484);
-    doc.setFont("helvetica","normal");doc.setFontSize(11);doc.setTextColor(201,215,230);doc.text("Created on "+today,LM,520);
+    doc.setFont("times","italic");doc.setFontSize(11.5);doc.setTextColor(201,215,230);doc.text("Not what you think you should care about. What your life already shows.",LM,512);
+    doc.setFont("helvetica","normal");doc.setFontSize(10);doc.setTextColor.apply(doc,BLUE);doc.text("Created on "+today,LM,536);
     doc.setFontSize(9);doc.setTextColor.apply(doc,BLUE);doc.text("FLOWmentum™ Workbook · Chapter 2 · Claudia Masüger · claudiamasueger.com",LM,H-60);
 
     /* ---- page: priorities ---- */
@@ -738,7 +741,7 @@ footer a{color:var(--blue);text-decoration:none}
   }
   document.getElementById("makePdf").addEventListener("click",function(){
     var st=status;st.textContent="Building your report…";
-    try{var doc=buildPdf();var blob=doc.output("blob");var name="FLOWmentum_My_Priorities_"+new Date().toISOString().slice(0,10)+".pdf";
+    try{var doc=buildPdf();var blob=doc.output("blob");var name="FLOWmentum_Your_Real_Priorities_"+new Date().toISOString().slice(0,10)+".pdf";
       dlNS.save({filename:name,data:blob}).then(function(){st.textContent="Saved. Open the PDF from your downloads.";setTimeout(function(){st.textContent="";},4000);},function(err){st.textContent=err&&err.code==="declined"?"Download cancelled.":"Couldn't save the file ("+(err&&err.code||"error")+").";setTimeout(function(){st.textContent="";},4000);});
     }catch(e){st.textContent="Couldn't build the PDF: "+e.message;}
   });
