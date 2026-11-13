@@ -763,5 +763,28 @@ footer a{color:var(--blue);text-decoration:none}
 })();
 </script>
 
+
+<!-- Vercel Web Analytics: page views + funnel events (events need Vercel Pro; harmless on Hobby) -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  (function(){
+    var sent={};try{sent=JSON.parse(localStorage.getItem("flow-milestones")||"{}");}catch(e){}
+    function track(name){if(sent[name])return;sent[name]=1;try{localStorage.setItem("flow-milestones",JSON.stringify(sent));}catch(e){}try{window.va("event",{name:name});}catch(e){}}
+    window.flowTrack=track;
+    document.addEventListener("DOMContentLoaded",function(){
+      var form=document.getElementById("wb");if(!form)return;
+      form.addEventListener("input",function(e){
+        var n=e.target.name||"";
+        track("started");
+        if(/^r\d$/.test(n)&&form.querySelectorAll('input[type=radio][name^="r"]:checked').length===8)track("rated_8_areas");
+        if(/^t\d$/.test(n)){var done=0;for(var i=1;i<=9;i++){var t=document.getElementById("t"+i);if(t&&t.value.trim())done++;}if(done===9)track("answered_9_questions");}
+        if(e.target.classList&&e.target.classList.contains("gname")&&e.target.value.trim())track("named_a_group");
+        if(/^v[123]$/.test(n)){var c=0;["v1","v2","v3"].forEach(function(id){var v=document.getElementById(id);if(v&&v.value.trim())c++;});if(c===3)track("declared_3_priorities");}
+      },true);
+      var pdf=document.getElementById("makePdf");if(pdf)pdf.addEventListener("click",function(){track("pdf_created");});
+    });
+  })();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
